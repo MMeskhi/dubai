@@ -184,20 +184,27 @@ function CategoryBlock({ cat, query }: { cat: ServiceCategory; query: string }) 
   if (query && filteredCards.length === 0 && !title.includes(query)) return null
 
   return (
-    <div className="svc-category animate-on-scroll">
-      <div className="svc-category__header">
-        <h2 className="svc-category__title">
+    <div className="animate-on-scroll">
+      {/* Category header */}
+      <div className="text-center mb-10">
+        <h2 className="font-heading text-[2.25rem] font-semibold text-ink leading-tight mb-4">
           <span className="text-accent">{cat.titleAccent}</span>
           {cat.titleRest ? <> <span>{cat.titleRest}</span></> : null}
         </h2>
-        <p className="svc-category__desc">{CAT_DESC}</p>
+        <p className="text-base text-ink/70 leading-relaxed max-w-[660px] mx-auto">{CAT_DESC}</p>
       </div>
-      <div className="svc-grid">
+      {/* Grid */}
+      <div className="grid grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-4">
         {(query ? filteredCards : cat.cards).map((card, i) => (
-          <div key={i} className="svc-card">
-            <img src={card.img} alt={card.label} className="svc-card__img" />
-            <div className="svc-card__gradient" />
-            <div className="svc-card__label"><p>{card.label}</p></div>
+          <div
+            key={i}
+            className="relative rounded-[20px] overflow-hidden aspect-square cursor-pointer transition-all hover:-translate-y-1 hover:shadow-xl"
+          >
+            <img src={card.img} alt={card.label} className="w-full h-full object-cover block opacity-90" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20 pointer-events-none" />
+            <div className="absolute bottom-2.5 left-2.5 right-2.5 bg-white rounded-[10px] px-4 py-2.5 text-base font-medium text-[#131314]">
+              <p>{card.label}</p>
+            </div>
           </div>
         ))}
       </div>
@@ -216,25 +223,25 @@ export default function ServicesClient() {
   return (
     <>
       {/* Hero */}
-      <section className="svc-hero">
-        <div className="svc-hero__bg">
-          <img src="/images/services/header-bg.png" alt="" className="svc-hero__bg-img" />
-          <div className="svc-hero__overlay" />
+      <section
+        id="services"
+        className="relative mt-[88px] mx-auto max-w-container rounded-[20px] overflow-hidden min-h-[352px] flex flex-col justify-between gap-12 p-9"
+      >
+        {/* Background image */}
+        <div className="absolute inset-0 z-0">
+          <img src="/images/services/header-bg.png" alt="" className="w-full h-full object-cover block" />
+          <div className="absolute inset-0 bg-ink/30" />
         </div>
-        <div className="svc-hero__container">
-          <div className="svc-hero__content">
-            <div className="svc-hero__breadcrumb">
-              <Link href="/">Home Page</Link>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M9 6l6 6-6 6" />
-              </svg>
-              <span>Services</span>
-            </div>
-            <h1 className="svc-hero__title">Services and Treatments</h1>
-            <p className="svc-hero__desc">Our wide range of dental services covers all your needs and concerns. Whether it&apos;s a regular check-up or a complex surgery.</p>
+        {/* Content */}
+        <div className="relative z-10 flex flex-col gap-10 h-full justify-between">
+          <div className="flex flex-col gap-3">
+            <h1 className="font-heading text-[2.5rem] font-semibold text-white leading-snug">Services and Treatments</h1>
+            <p className="text-base text-white/90 leading-relaxed">Our wide range of dental services covers all your needs and concerns. Whether it&apos;s a regular check-up or a complex surgery.</p>
           </div>
-          <div className="svc-hero__controls">
-            <div className="svc-hero__search">
+          {/* Controls */}
+          <div className="flex items-center justify-between gap-6 md:flex-col">
+            {/* Search */}
+            <div className="flex items-center gap-2 bg-white rounded-[10px] p-3 w-72 md:w-full">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <circle cx="11" cy="11" r="8" /><path d="M21 21l-4.35-4.35" />
               </svg>
@@ -243,18 +250,23 @@ export default function ServicesClient() {
                 placeholder="Start searching"
                 value={searchQuery}
                 onChange={e => setSearchQuery(e.target.value)}
+                className="flex-1 outline-none bg-transparent text-ink placeholder:text-muted text-base"
               />
             </div>
-            <div className="svc-hero__filters">
-              {(['all', 'dental', 'skin'] as const).map(f => (
-                <button
-                  key={f}
-                  className={`svc-filter${filter === f && !query ? ' active' : ''}`}
-                  onClick={() => { setFilter(f); setSearchQuery('') }}
-                >
-                  {f === 'all' ? 'All Services' : f === 'dental' ? 'Dental Services' : 'Skin Care'}
-                </button>
-              ))}
+            {/* Filters */}
+            <div className="flex gap-2">
+              {(['all', 'dental', 'skin'] as const).map(f => {
+                const isActive = filter === f && !query
+                return (
+                  <button
+                    key={f}
+                    className={`px-6 py-3 rounded-full text-base font-medium cursor-pointer border border-white backdrop-blur-sm transition-all ${isActive ? 'bg-white text-ink' : 'bg-white/[0.16] text-white hover:bg-white/30'}`}
+                    onClick={() => { setFilter(f); setSearchQuery('') }}
+                  >
+                    {f === 'all' ? 'All Services' : f === 'dental' ? 'Dental Services' : 'Skin Care'}
+                  </button>
+                )
+              })}
             </div>
           </div>
         </div>
@@ -262,8 +274,8 @@ export default function ServicesClient() {
 
       {/* Dental */}
       {showDental && (
-        <div className="svc-section" data-category="dental">
-          <div className="svc-section__container">
+        <div className="px-12 py-12 md:px-6 md:py-8 sm:px-4 sm:py-6" data-category="dental">
+          <div className="max-w-container mx-auto flex flex-col gap-[120px] md:gap-20 sm:gap-16">
             {dentalCategories.map((cat, i) => (
               <CategoryBlock key={i} cat={cat} query={query} />
             ))}
@@ -273,8 +285,8 @@ export default function ServicesClient() {
 
       {/* Skin */}
       {showSkin && (
-        <div className="svc-section" data-category="skin">
-          <div className="svc-section__container">
+        <div className="px-12 py-12 md:px-6 md:py-8 sm:px-4 sm:py-6" data-category="skin">
+          <div className="max-w-container mx-auto flex flex-col gap-[120px] md:gap-20 sm:gap-16">
             {skinCategories.map((cat, i) => (
               <CategoryBlock key={i} cat={cat} query={query} />
             ))}
@@ -283,27 +295,30 @@ export default function ServicesClient() {
       )}
 
       {/* Consultation Banner */}
-      <section className="consultation">
-        <div className="consultation__container">
-          <div className="consultation__card">
-            <div className="consultation__text">
-              <h2 className="consultation__title">Not Sure What Treatment You Need?</h2>
-              <p className="consultation__desc">Book a consultation with one of our experts and we&apos;ll help you out!</p>
-              <Link href="/contact" className="consultation__btn">
+      <section className="py-[140px] px-[161px] md:py-20 md:px-6 sm:py-12 sm:px-4">
+        <div className="max-w-[1118px] mx-auto">
+          {/* Card */}
+          <div className="bg-sepia rounded-[20px_20px_0_0] px-[60px] pt-20 pb-[60px] relative overflow-hidden min-h-[316px]">
+            <div className="max-w-[600px] flex flex-col gap-3 items-start">
+              <h2 className="font-heading text-[2.25rem] font-semibold text-ink leading-snug">Not Sure What Treatment You Need?</h2>
+              <p className="text-base text-ink/70 leading-relaxed">Book a consultation with one of our experts and we&apos;ll help you out!</p>
+              <Link href="/#contact" className="btn-pill mt-7">
                 <span>Book Consultation</span>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                   <rect x="3" y="4" width="18" height="18" rx="2" /><path d="M16 2v4M8 2v4M3 10h18" />
                 </svg>
               </Link>
             </div>
-            <div className="consultation__image">
-              <img src="/images/services/consultation-woman.png" alt="Book a consultation" />
+            {/* Decorative image */}
+            <div className="absolute right-0 bottom-0 w-[378px] h-[456px] overflow-hidden md:hidden">
+              <img src="/images/services/consultation-woman.png" alt="Book a consultation" className="w-full h-full object-cover" />
             </div>
           </div>
-          <div className="consultation__stripe">
-            <div className="consultation__stripe-yellow" />
-            <div className="consultation__stripe-red" />
-            <div className="consultation__stripe-brown" />
+          {/* Stripe */}
+          <div className="flex h-3 overflow-hidden">
+            <div className="flex-1 bg-brand-yellow" />
+            <div className="flex-1 bg-coral" />
+            <div className="flex-1 bg-brown" />
           </div>
         </div>
       </section>

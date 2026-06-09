@@ -1,141 +1,434 @@
-import type { Metadata } from 'next'
-import Link from 'next/link'
-import FAQ, { type FAQItem } from '@/components/FAQ'
-import ContactSection from '@/components/ContactSection'
+import type { Metadata } from "next";
+import Link from "next/link";
+import FAQ, { type FAQItem } from "@/components/FAQ";
+import ContactSection from "@/components/ContactSection";
+import ServicesPreview from "@/components/ServicesPreview";
+import SmileGallery from "@/components/SmileGallery";
+import { articles } from "@/data/articles";
 
 export const metadata: Metadata = {
-  title: 'About Us | Atlantis Dental & Aesthetic Clinic Dubai',
-  description: "Learn about Atlantis, Dubai's premier dental and aesthetic clinic. Meet our expert team and discover our mission to deliver world-class care.",
-}
+  title: "Atlantis Dental & Aesthetic Clinic Dubai",
+  description:
+    "Premium dental and aesthetic care in Dubai. Advanced dentistry and skin care treatments with international standards.",
+};
+
+const CalendarIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 18 18" fill="currentColor">
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M6 1a1 1 0 00-2 0v1c-.46 0-.86.003-1.195.031-.395.032-.788.103-1.167.296A3 3 0 00.327 3.638C.134 4.016.063 4.41.031 4.805A9.31 9.31 0 00.003 5.5.5.5 0 00.5 6h17a.5.5 0 00.5-.5 9.31 9.31 0 00-.031-.695 3.78 3.78 0 00-.296-1.167 3 3 0 00-1.311-1.311 3.78 3.78 0 00-1.167-.296A13.36 13.36 0 0014 2V1a1 1 0 10-2 0v1H6V1zm12 7.5a.5.5 0 00-.5-.5H.5a.5.5 0 00-.5.5v5.339c0 .527 0 .982.031 1.356.032.395.103.788.296 1.167a3 3 0 001.311 1.311c.378.193.772.264 1.167.296.376.031.83.031 1.357.031h9.677c.527 0 .982 0 1.356-.031a3.78 3.78 0 001.167-.296 3 3 0 001.311-1.311c.193-.379.264-.772.296-1.167.031-.374.031-.829.031-1.356V8.5z"
+    />
+  </svg>
+);
+
+const ArrowIcon = () => (
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+  >
+    <path d="M7 17L17 7M17 7H7M17 7v10" />
+  </svg>
+);
 
 const StarIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="#f6bc5e">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="#F6BC5E">
     <path d="M12 2l2.47 5.01L20 7.86l-4 3.9.94 5.5L12 14.47l-4.94 2.8.94-5.5-4-3.9 5.53-.85L12 2z" />
   </svg>
-)
+);
 
 const faqItems: FAQItem[] = [
   {
-    q: 'What services does Atlantis Clinic offer?',
-    a: 'Atlantis Clinic offers a comprehensive range of dental and aesthetic services including general dentistry, cosmetic dentistry, orthodontics, dental implants, teeth whitening, facial aesthetics, dermal fillers, Botox, skin rejuvenation treatments, and more. We tailor every treatment plan to meet your individual needs.',
+    q: "What services does your dental clinic offer?",
+    a: "We offer a comprehensive range of dental and aesthetic services including general dentistry, cosmetic procedures, orthodontics, dental implants, facial aesthetics, and advanced skincare treatments. Each service is delivered using state-of-the-art technology and personalized care.",
   },
   {
-    q: 'How do I book an appointment?',
-    a: 'You can book an appointment by calling us directly, filling out the contact form on our website, or visiting our clinic in person. We also offer online booking through our scheduling system for your convenience.',
+    q: "Who can become a patient at your dental clinic?",
+    a: "Anyone can become a patient at our clinic. We welcome patients of all ages, from children to seniors. Our team is experienced in providing care tailored to each individual's needs and comfort level.",
   },
   {
-    q: 'What are your clinic hours?',
-    a: 'Our clinic is open every day from Monday to Sunday, 9:00 AM to 9:00 PM. Emergency dental services are available outside regular hours — please call our emergency line for assistance.',
+    q: "What are the payment options available for dental treatments?",
+    a: "We accept various payment methods including cash, credit/debit cards, and major insurance providers. We also offer flexible payment plans for more extensive treatments. Please contact our team for details.",
   },
   {
-    q: 'Do you accept insurance?',
-    a: 'Yes, we accept a wide range of insurance providers in the UAE. Please contact our reception team with your insurance details and we will verify your coverage before your appointment. We also offer flexible payment plans for treatments not covered by insurance.',
+    q: "How long does it take to schedule an appointment?",
+    a: "You can schedule an appointment immediately through our online booking system, by phone, or by visiting the clinic. We strive to accommodate same-day or next-day appointments whenever possible.",
   },
   {
-    q: 'Is the clinic suitable for children?',
-    a: 'Absolutely. We provide paediatric dentistry services in a child-friendly environment. Our team is experienced in working with young patients and ensuring they feel comfortable and safe throughout their visit.',
+    q: "What should I know about dental insurance and coverage?",
+    a: "We work with a wide range of insurance providers in the UAE. Our team will help verify your coverage before treatment begins. For procedures not covered by insurance, we offer competitive pricing and payment plans.",
   },
-]
+  {
+    q: "What makes your dental clinic different from others in this area?",
+    a: "Our clinic combines international standards with cutting-edge technology and a team of highly qualified specialists. We offer a comprehensive approach integrating dental and aesthetic care, ensuring personalized, comfortable, and premium-quality treatment.",
+  },
+];
 
 export default function HomePage() {
+  const newsArticles = articles.slice(0, 4);
+
   return (
     <>
-      {/* Hero / About */}
-      <section className="hero" id="about">
-        <div className="hero__container">
-          <div className="hero__content animate-on-scroll">
-            <h1 className="hero__title">
-              <span>Welcome to</span> <span className="text-accent">Atlantis Geo</span> <span>clinic</span>
+      {/* 1 · HERO */}
+      <section className="pt-[88px] bg-white" id="about">
+        <div className="max-w-[1440px] mx-auto px-[100px] py-20 flex items-center gap-16 [max-width:900px]:flex-col [max-width:900px]:px-8 [max-width:900px]:py-12 [max-width:900px]:gap-12">
+          <div className="flex-1 flex flex-col items-start gap-7 max-w-[600px]">
+            <h1 className="font-heading text-[4rem] font-extrabold leading-tight text-ink m-0">
+              <span className="text-accent">Premium</span> Aesthetic Care for
+              Your Skin and Your Smile
             </h1>
-            <p className="hero__description">
-              An idea born from years of Georgian professional experience has evolved into a premium dental and aesthetic clinic guided by international standards and modern excellence. Our team consists of highly qualified specialists with extensive experience in leading international clinics and active membership in global professional organizations. Continuous education, advanced methodologies, and strict adherence to international protocols shape every aspect of our work. Aesthetics are at the core of our philosophy. We believe that a healthy smile and harmonious appearance are essential expressions of confidence and quality of life. By combining medical precision with an artistic vision, we deliver results that are natural, balanced, and enduring. Using state-of-the-art technologies, high-quality materials, and a fully personalized approach, we create an experience that goes beyond clinical care, one defined by comfort, discretion, and uncompromising quality.
+            <p className="text-base leading-relaxed text-muted max-w-[520px]">
+              Experience a seamless blend of advanced dental care and premium
+              dermatology designed to elevate your natural beauty. Our
+              specialists deliver individualized treatments with meticulous
+              precision, ensuring healthier skin and a brighter smile.
             </p>
+            <Link href="/#contact" className="btn-pill">
+              <span>Book Consultation</span>
+              <CalendarIcon />
+            </Link>
           </div>
-
-          <div className="hero__image animate-on-scroll">
-            <img src="/images/clinic/hero.png" alt="Atlantis Clinic exterior view" className="hero__img" />
-          </div>
-
-          <div className="hero__mission animate-on-scroll">
-            <div className="hero__mission-text">
-              <h2 className="hero__subtitle">Our Mission</h2>
-              <p className="hero__body">
-                To provide premium dental and aesthetic care through international standards, advanced technology, and a highly skilled team, while ensuring safety, comfort, and personalized treatment for every patient. We are committed to delivering natural, long-lasting results that enhance both health and confidence.
-              </p>
-            </div>
-            <div className="hero__mission-image">
-              <img src="/images/clinic/mission.png" alt="Dental care close-up" className="hero__section-img" />
-            </div>
-          </div>
-
-          <div className="hero__vision animate-on-scroll">
-            <div className="hero__vision-image">
-              <img src="/images/clinic/vision.png" alt="Doctor consulting with patient" className="hero__section-img" />
-            </div>
-            <div className="hero__vision-text">
-              <h2 className="hero__subtitle">Our Vision</h2>
-              <p className="hero__body">
-                To become a benchmark clinic in the region, recognized for excellence in dentistry and aesthetics, innovative approaches, and an unwavering commitment to quality. Our vision is to redefine patient experience by combining medical expertise, refined aesthetics, and trust, creating results that are timeless and distinctive.
-              </p>
+          <div className="shrink-0">
+            <div className="w-[440px] h-[520px] bg-[#2a1a17] rounded-[24px] p-2 flex flex-col gap-1.5">
+              <img
+                src="/images/clinic/hero.png"
+                alt="Atlantis Clinic exterior"
+                className="w-full object-cover rounded-2xl"
+                style={{ flex: 2.5 }}
+              />
+              <img
+                src="/images/clinic/mission.png"
+                alt="Clinic interior"
+                className="w-full object-cover rounded-2xl"
+                style={{ flex: 1.5 }}
+              />
+              <img
+                src="/images/clinic/vision.png"
+                alt="Clinic corridor"
+                className="w-full object-cover rounded-2xl"
+                style={{ flex: 1 }}
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Team */}
-      <section className="team" id="team">
-        <div className="team__container">
-          <div className="team__header animate-on-scroll">
+      {/* 2 · WELCOME */}
+      <section className="bg-white py-[100px]">
+        <div className="max-w-[1440px] mx-auto px-[100px] flex items-center gap-20 [max-width:900px]:flex-col [max-width:900px]:px-8 [max-width:900px]:gap-12">
+          <div className="relative w-[500px] h-[480px] shrink-0 [max-width:900px]:w-full [max-width:900px]:max-w-[480px] [max-width:900px]:mx-auto">
+            <div className="absolute top-0 left-0 w-[155px] h-[155px] bg-brown rounded-[20px] flex items-center justify-center z-10">
+              <svg viewBox="0 0 60 60" width="48" height="48" fill="white">
+                <path d="M30 4L34.5 25.5L56 30L34.5 34.5L30 56L25.5 34.5L4 30L25.5 25.5Z" />
+              </svg>
+            </div>
+            <div className="absolute top-0 left-[175px] w-[200px] h-[200px] bg-brand-yellow rounded-[20px] flex items-center justify-center z-10">
+              <svg viewBox="0 0 80 50" width="60" height="40" fill="none">
+                <path
+                  d="M8 8 Q40 50 72 8"
+                  stroke="white"
+                  strokeWidth="7"
+                  strokeLinecap="round"
+                  fill="none"
+                />
+              </svg>
+            </div>
+            <div className="absolute bottom-0 left-0 right-0 h-[360px] bg-coral rounded-[20px] z-0" />
+            <div className="absolute bottom-0 left-0 right-0 h-[360px] z-20 flex items-end justify-center overflow-hidden rounded-[20px]">
+              <img
+                src="/images/team/doctor-2.png"
+                alt="Atlantis medical team"
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
+          </div>
+
+          <div className="flex-1 flex flex-col items-start gap-6">
             <div className="section-badge">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2" /><circle cx="9" cy="7" r="4" />
-                <path d="M23 21v-2a4 4 0 00-3-3.87" /><path d="M16 3.13a4 4 0 010 7.75" />
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="#CB7266">
+                <path d="M12 2l1.8 5.4L19.4 9l-4.6 3.3 1.7 5.4L12 14.7l-4.5 3 1.7-5.4L4.6 9l5.6-1.6z" />
+              </svg>
+              <span>Who we are</span>
+            </div>
+            <h2 className="font-heading text-[2.75rem] font-extrabold text-ink leading-tight m-0">
+              Welcome to <span className="text-accent">Atlantis</span> Clinic
+            </h2>
+            <p className="text-base leading-relaxed text-muted max-w-[500px]">
+              Experience modern dentistry delivered with precision, comfort, and
+              care. At Atlantis Clinic, advanced technology meets expert
+              professionals to provide high-quality dental treatments in a calm,
+              premium environment focused on your long-term oral health.
+            </p>
+            <Link href="/#team" className="btn-pill">
+              <span>Learn More</span>
+              <ArrowIcon />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 3 · REDEFINING TECHNOLOGY */}
+      <section className="bg-sepia py-[100px]">
+        <div className="max-w-[1440px] mx-auto px-[100px]">
+          <div className="text-center mb-[60px]">
+            <h2 className="font-heading text-[2.5rem] font-extrabold text-ink leading-snug max-w-[820px] mx-auto mb-5">
+              We Are <span className="text-accent">Redefining Dental</span> And{" "}
+              <span className="text-accent">Skin Care</span> Through
+              Cutting-Edge Technology
+            </h2>
+            <p className="text-base text-muted max-w-[640px] mx-auto">
+              At our clinic, we take pride in our highly skilled and efficient
+              team of dental specialists who are always ready to meet your
+              dental &amp; derma needs.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-4 gap-5 items-stretch xl:grid-cols-2 sm:grid-cols-1">
+            <div className="bg-white rounded-[20px] p-7 flex flex-col gap-4 min-h-[340px] relative overflow-hidden">
+              <div className="w-11 h-11 rounded-full flex items-center justify-center shrink-0 bg-coral">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="white">
+                  <path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm0 2c1.5 0 3.2 2.1 4 5H8c.8-2.9 2.5-5 4-5zm-5 6h10c.1.6.2 1.3.2 2s-.1 1.4-.2 2H7c-.1-.6-.2-1.3-.2-2s.1-1.4.2-2zm1 5h8c-.8 2.9-2.5 5-4 5s-3.2-2.1-4-5z" />
+                </svg>
+              </div>
+              <h3 className="text-[17px] font-bold text-ink">
+                International Launch
+              </h3>
+              <p className="text-[15px] leading-relaxed text-muted">
+                At our clinic, we take pride in our highly skilled and efficient
+                team of dental specialists and skin care experts who are always
+                ready to meet your dental &amp; skin care needs.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-[20px] p-0 gap-0 flex flex-col min-h-[340px] relative overflow-hidden">
+              <img
+                src="/images/team/doctor-1.png"
+                alt="Online Medical Assistance"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute top-4 right-4 w-14 h-14 rounded-full overflow-hidden border-2 border-white">
+                <img src="/images/team/doctor-3.png" alt="" />
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 bg-white px-5 py-[14px] font-semibold text-[15px] rounded-b-[20px]">
+                Online Medical Assistance
+              </div>
+            </div>
+
+            <div className="bg-white rounded-[20px] p-7 flex flex-col gap-4 min-h-[340px] relative overflow-hidden">
+              <div className="flex items-center gap-3">
+                <div className="w-11 h-11 rounded-full flex items-center justify-center shrink-0 bg-brand-yellow">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="20"
+                    height="20"
+                    fill="none"
+                    stroke="white"
+                    strokeWidth="2"
+                  >
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 7v5l3 3" strokeLinecap="round" />
+                  </svg>
+                </div>
+                <div className="flex">
+                  <img
+                    src="/images/testimonials/avatar-1.png"
+                    alt=""
+                    className="w-9 h-9 rounded-full border-2 border-white object-cover ml-0"
+                  />
+                  <img
+                    src="/images/testimonials/avatar-2.png"
+                    alt=""
+                    className="w-9 h-9 rounded-full border-2 border-white object-cover -ml-2.5"
+                  />
+                  <img
+                    src="/images/testimonials/avatar-3.png"
+                    alt=""
+                    className="w-9 h-9 rounded-full border-2 border-white object-cover -ml-2.5"
+                  />
+                </div>
+              </div>
+              <h3 className="text-[17px] font-bold text-ink">
+                24 hour post support
+              </h3>
+              <p className="text-[15px] leading-relaxed text-muted">
+                We will take care of you post procedures and be readily
+                available to help and assist you when needed. We are just one
+                phone call away for any kind of support and assistance.
+              </p>
+            </div>
+
+            <div className="bg-brown rounded-[20px] p-7 flex flex-col gap-4 min-h-[340px] relative overflow-hidden">
+              <h3 className="text-[17px] font-bold text-white">
+                Collaborative Healthcare
+              </h3>
+              <p className="text-[15px] leading-relaxed text-white/70">
+                Entails teamwork among professionals from various fields for
+                holistic patient care
+              </p>
+              <div
+                className="absolute bottom-[-40px] right-[-40px] opacity-80 pointer-events-none"
+                aria-hidden="true"
+              >
+                <svg viewBox="0 0 200 200" width="180" height="180" fill="none">
+                  <ellipse
+                    cx="100"
+                    cy="100"
+                    rx="92"
+                    ry="92"
+                    stroke="rgba(255,255,255,0.12)"
+                    strokeWidth="1"
+                  />
+                  <ellipse
+                    cx="100"
+                    cy="100"
+                    rx="70"
+                    ry="92"
+                    stroke="rgba(255,255,255,0.12)"
+                    strokeWidth="1"
+                  />
+                  <ellipse
+                    cx="100"
+                    cy="100"
+                    rx="40"
+                    ry="92"
+                    stroke="rgba(255,255,255,0.12)"
+                    strokeWidth="1"
+                  />
+                  <ellipse
+                    cx="100"
+                    cy="100"
+                    rx="92"
+                    ry="38"
+                    stroke="rgba(255,255,255,0.12)"
+                    strokeWidth="1"
+                  />
+                  <ellipse
+                    cx="100"
+                    cy="100"
+                    rx="92"
+                    ry="65"
+                    stroke="rgba(255,255,255,0.12)"
+                    strokeWidth="1"
+                  />
+                  <line
+                    x1="8"
+                    y1="100"
+                    x2="192"
+                    y2="100"
+                    stroke="rgba(255,255,255,0.12)"
+                    strokeWidth="1"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4 · TEAM */}
+      <section className="bg-white py-[100px]" id="team">
+        <div className="max-w-[1440px] mx-auto px-[100px]">
+          <div className="text-center mb-[60px] flex flex-col items-center gap-5">
+            <div className="section-badge">
+              <svg
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+              >
+                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 00-3-3.87" />
+                <path d="M16 3.13a4 4 0 010 7.75" />
               </svg>
               <span>Meet the Team</span>
             </div>
-            <h2 className="section-title">
-              <span className="text-accent">Our Team</span> <span>of Skilled Doctors</span>
+            <h2 className="font-heading text-[2.5rem] font-extrabold text-ink m-0">
+              <span className="text-accent">Our Team</span> of Skilled Doctors
             </h2>
-            <p className="section-description">At our clinic, we take pride in our highly skilled and efficient team of dental specialists who are always ready to meet your dental &amp; derma needs.</p>
+            <p className="text-base text-muted max-w-[600px]">
+              At our clinic, we take pride in our highly skilled and efficient
+              team of dental specialists who are always ready to meet your
+              dental &amp; derma needs.
+            </p>
           </div>
 
-          <div className="team__grid">
+          <div className="grid grid-cols-4 gap-5 items-start md:grid-cols-2 sm:grid-cols-1">
             {[
-              { img: '/images/team/doctor-1.png', name: 'Mason Caldwell', role: 'Lead Dental Surgeon', rating: '5.0' },
-              { img: '/images/team/doctor-2.png', name: 'Mason Caldwell', role: 'Aesthetic Medicine Specialist', rating: '4.9' },
-              { img: '/images/team/doctor-3.png', name: 'Mason Caldwell', role: 'Orthodontist', rating: '5.0' },
+              {
+                img: "/images/team/doctor-1.png",
+                name: "Mason Caldwell",
+                role: "Dr. Emily Carter, a visionary in dental ca...",
+                rating: 5.0,
+                stars: 5,
+              },
+              {
+                img: "/images/team/doctor-2.png",
+                name: "Mason Caldwell",
+                role: "Dr. Emily Carter, a visionary in dental ca...",
+                rating: 4.9,
+                stars: 4,
+              },
+              {
+                img: "/images/team/doctor-3.png",
+                name: "Mason Caldwell",
+                role: "Dr. Emily Carter, a visionary in dental ca...",
+                rating: 5.0,
+                stars: 5,
+              },
             ].map((doc, i) => (
-              <div key={i} className="team__card animate-on-scroll">
-                <div className="team__photo">
-                  <img src={doc.img} alt={doc.name} />
+              <div
+                key={i}
+                className="rounded-[20px] overflow-hidden bg-sepia flex flex-col"
+              >
+                <div className="w-full aspect-[3/4] overflow-hidden bg-sepia">
+                  <img
+                    src={doc.img}
+                    alt={doc.name}
+                    className="w-full h-full object-cover object-top"
+                  />
                 </div>
-                <div className="team__info">
-                  <h3 className="team__name">{doc.name}</h3>
-                  <p className="team__role">{doc.role}</p>
-                  <div className="team__rating">
-                    <span className="team__rating-score">{doc.rating}</span>
-                    <div className="team__stars">
-                      {[...Array(5)].map((_, j) => <span key={j}>&#9733;</span>)}
+                <div className="px-5 py-4 pb-5 flex flex-col gap-1">
+                  <p className="font-bold text-base text-ink">{doc.name}</p>
+                  <p className="text-sm text-muted truncate">{doc.role}</p>
+                  <div className="flex items-center gap-2.5 mt-1">
+                    <span className="text-2xl font-extrabold text-ink leading-none">
+                      {doc.rating.toFixed(1)}
+                    </span>
+                    <div className="flex gap-0.5">
+                      {[...Array(5)].map((_, j) => (
+                        <span
+                          key={j}
+                          style={{
+                            color: j < doc.stars ? "#F6BC5E" : "#D9D9D9",
+                            fontSize: "18px",
+                          }}
+                        >
+                          ★
+                        </span>
+                      ))}
                     </div>
                   </div>
                 </div>
               </div>
             ))}
 
-            <div className="team__card team__card--cta animate-on-scroll">
-              <img src="/images/testimonials/rating-bg.svg" alt="" className="team__cta-bg" />
-              <div className="team__cta-content">
-                <div className="team__cta-icon">
-                  <svg viewBox="0 0 64 64" fill="none">
-                    <circle cx="32" cy="32" r="31" stroke="rgba(255,255,255,0.4)" strokeWidth="2" />
-                    <path d="M32 20l3.09 9.51h10l-8.09 5.88 3.09 9.51L32 39.02l-8.09 5.88 3.09-9.51-8.09-5.88h10L32 20z" fill="#F6BC5E" />
+            <div className="bg-brown min-h-[300px] flex items-center justify-center rounded-[20px] overflow-visible relative">
+              <div className="flex flex-col items-center gap-5 p-8">
+                <div className="w-[72px] h-[72px] rounded-full border border-white/40 flex items-center justify-center">
+                  <svg viewBox="0 0 60 60" width="28" height="28" fill="white">
+                    <path d="M30 4L34.5 25.5L56 30L34.5 34.5L30 56L25.5 34.5L4 30L25.5 25.5Z" />
                   </svg>
                 </div>
-                <Link href="#" className="team__cta-btn">
+                <Link href="#" className="btn-pill btn-pill--sm">
                   <span>View All Employees</span>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <path d="M7 17L17 7M17 7H7M17 7v10" />
-                  </svg>
+                  <ArrowIcon />
                 </Link>
               </div>
             </div>
@@ -143,72 +436,168 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="testimonials" id="testimonials">
-        <div className="testimonials__container">
-          <div className="testimonials__header animate-on-scroll">
-            <h2 className="section-title">
-              <span>Client satisfaction </span><span className="text-accent">Guaranteed</span>
-            </h2>
-            <p className="section-description">At our clinic, we take pride in our highly skilled and efficient team of dental specialists who are always ready to meet your dental &amp; derma needs.</p>
+      {/* 5 · SERVICES */}
+      <ServicesPreview />
+
+      {/* 6 · SMILE GALLERY */}
+      <SmileGallery />
+
+      {/* 7 · PATH TO HEALTHIER SMILE */}
+      <section className="bg-white py-[100px]">
+        <div className="max-w-[1440px] mx-auto px-[100px] text-center">
+          <h2 className="font-heading text-[2.5rem] font-extrabold text-ink mb-5">
+            Your Path to a Healthier <span className="text-accent">Smile</span>
+          </h2>
+          <p className="text-base text-muted max-w-[680px] mx-auto mb-14 leading-relaxed">
+            From your first visit to ongoing care, our process is designed to be
+            simple, transparent, and focused on understanding your needs while
+            delivering high-quality dental treatment at every stage.
+          </p>
+
+          <div className="flex items-center justify-center gap-0 mb-8 sm:flex-col sm:gap-2">
+            <span className="px-6 py-[10px] border-[1.5px] border-stroke rounded-full text-[15px] font-medium text-ink bg-white whitespace-nowrap">
+              Step #1
+            </span>
+            <span className="flex-1 h-0 border-t-2 border-dashed border-stroke max-w-[200px] sm:hidden" />
+            <span className="px-6 py-[10px] border-[1.5px] border-coral rounded-full text-[15px] font-semibold bg-coral text-white whitespace-nowrap">
+              Step #2
+            </span>
+            <span className="flex-1 h-0 border-t-2 border-dashed border-stroke max-w-[200px] sm:hidden" />
+            <span className="px-6 py-[10px] border-[1.5px] border-stroke rounded-full text-[15px] font-medium text-ink bg-white whitespace-nowrap">
+              Step #3
+            </span>
           </div>
 
-          <div className="testimonials__grid">
-            <div className="testimonial-card--rating animate-on-scroll">
-              <img src="/images/testimonials/rating-bg.svg" alt="" className="testimonial-rating__bg" />
-              <div className="testimonial-rating__inner">
-                <img src="/images/testimonials/laurel-left.svg" alt="" className="testimonial-rating__laurel" />
-                <div className="testimonial-rating__center">
-                  <div className="testimonial-rating__stars">
-                    {[...Array(5)].map((_, i) => <StarIcon key={i} />)}
-                  </div>
-                  <div className="testimonial-rating__score-group">
-                    <div className="testimonial-rating__score">5.0</div>
-                    <div className="testimonial-rating__text">Trusted by 1000+ users</div>
-                  </div>
-                </div>
-                <img src="/images/testimonials/laurel-right.svg" alt="" className="testimonial-rating__laurel" />
+          <div className="grid grid-cols-3 gap-5 mb-12 text-left md:grid-cols-1">
+            <div className="bg-sepia rounded-[20px] p-8 px-7 flex flex-col gap-4">
+              <h3 className="text-[17px] font-bold text-ink">
+                Book a Consultation
+              </h3>
+              <p className="text-[15px] leading-[1.65] text-muted">
+                A thorough dental examination designed to evaluate your oral
+                health, identify concerns, and clearly understand your goals,
+                with no commitment required.
+              </p>
+            </div>
+            <div className="bg-brown rounded-[20px] p-8 px-7 flex flex-col gap-4">
+              <h3 className="text-[17px] font-bold text-white">
+                Personalized Treatment
+              </h3>
+              <p className="text-[15px] leading-[1.65] text-white/75">
+                A detailed, personalized treatment plan that explains
+                recommended procedures, expected timelines, and transparent
+                costs, so you know exactly what to expect.
+              </p>
+            </div>
+            <div className="bg-sepia rounded-[20px] p-8 px-7 flex flex-col gap-4">
+              <h3 className="text-[17px] font-bold text-ink">
+                Ongoing Expert Care
+              </h3>
+              <p className="text-[15px] leading-[1.65] text-muted">
+                Expert dental treatment performed using advanced technology,
+                combined with attentive follow-up care and guidance to ensure
+                long-term oral health and confidence.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex justify-center">
+            <Link href="/#contact" className="btn-pill">
+              <span>Book Consultation</span>
+              <CalendarIcon />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 8 · TESTIMONIALS */}
+      <section className="bg-sepia py-[100px]" id="testimonials">
+        <div className="max-w-[1440px] mx-auto px-[100px]">
+          <h2 className="font-heading text-[2.5rem] font-extrabold text-ink mb-3">
+            Client Satisfaction <span className="text-accent">Guaranteed</span>
+          </h2>
+          <p className="text-base text-muted mb-12 max-w-[760px]">
+            At our clinic, we take pride in our highly skilled and efficient
+            team of dental specialists who are always ready to meet your dental
+            &amp; derma needs.
+          </p>
+
+          <div className="grid grid-cols-4 gap-5 items-start xl:grid-cols-2 sm:grid-cols-1">
+            <div className="bg-brown rounded-[20px_4px_20px_20px] p-9 px-7 flex flex-col items-center gap-2 relative min-h-[280px] justify-center">
+              <div className="flex gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <StarIcon key={i} />
+                ))}
+              </div>
+              <div className="text-5xl font-extrabold text-white leading-none">
+                5.0
+              </div>
+              <div className="text-sm text-white/70 text-center">
+                Trusted by 1000+ users
+              </div>
+              <div className="absolute bottom-5 left-0 right-0 flex justify-between px-4 pointer-events-none">
+                <img
+                  src="/images/testimonials/laurel-left.svg"
+                  alt=""
+                  className="w-14 opacity-60"
+                />
+                <img
+                  src="/images/testimonials/laurel-right.svg"
+                  alt=""
+                  className="w-14 opacity-60"
+                />
               </div>
             </div>
 
             {[
               {
-                score: '5.0',
-                quote: '"I had a fantastic experience with Dental Clinkick! Their team was incredibly attentive and kept me updated throughout the design process. I loved how user-focused their approach was, making sure everything met my needs. I can\'t wait to implement the designs!"',
-                avatar: '/images/testimonials/avatar-1.png',
-                name: 'Mason Caldwell',
-                detail: 'Dental Veneers Patient',
+                quote:
+                  '"I had a fantastic experience with Dental Clinkick! Their team was incredibly attentive and kept me updated throughout the design process. I loved how user-focused their approach was, making sure everything met my needs. I can\'t wait to implement the designs!"',
+                avatar: "/images/testimonials/avatar-1.png",
+                name: "Mason Caldwell",
+                detail: "Dr. Emily Carter, a visionary...",
               },
               {
-                score: '5.0',
-                quote: '"Working with Dental Clinkick was a breeze! They delivered on time and ensured I was happy with every step of the process. Their user-focused design strategy really shines through. I\'m looking forward to putting their designs into action!"',
-                avatar: '/images/testimonials/avatar-2.png',
-                name: 'Mason Caldwell',
-                detail: 'Aesthetic Treatment Patient',
+                quote:
+                  '"Working with Dental Clinkick was a breeze! They delivered on time and ensured I was happy with every step of the process. Their user-focused design strategy really shines through. I\'m looking forward to putting their designs into action!"',
+                avatar: "/images/testimonials/avatar-2.png",
+                name: "Mason Caldwell",
+                detail: "Dr. Emily Carter, a visionary...",
               },
               {
-                score: '5.0',
-                quote: '"Dental Clinkick exceeded my expectations! The designs were delivered promptly, and their communication was top-notch. I appreciated the detailed updates they provided, which kept me in the loop. I\'m excited to see how these designs will enhance my platform!"',
-                avatar: '/images/testimonials/avatar-3.png',
-                name: 'Mason Caldwell',
-                detail: 'Family Dentistry Patient',
+                quote:
+                  '"Dental Clinkick exceeded my expectations! The designs were delivered promptly, and their communication was top-notch. I appreciated the detailed updates they provided, which kept me in the loop."',
+                avatar: "/images/testimonials/avatar-3.png",
+                name: "Mason Caldwell",
+                detail: "Dr. Emily Carter, a visionary...",
               },
             ].map((t, i) => (
-              <div key={i} className="testimonial-card animate-on-scroll">
-                <div className="testimonial-card__top">
-                  <div className="testimonial-card__stars">
-                    <span className="testimonial-card__stars-score">{t.score}</span>
-                    <div className="testimonial-card__stars-icons">
-                      {[...Array(5)].map((_, j) => <span key={j}>&#9733;</span>)}
+              <div
+                key={i}
+                className="bg-white rounded-[20px] p-7 flex flex-col justify-between gap-6 min-h-[280px]"
+              >
+                <div className="flex flex-col gap-4">
+                  <div className="flex items-center gap-2.5">
+                    <span className="text-[22px] font-extrabold text-ink">
+                      5.0
+                    </span>
+                    <div className="flex gap-[3px]">
+                      {[...Array(5)].map((_, j) => (
+                        <StarIcon key={j} />
+                      ))}
                     </div>
                   </div>
-                  <blockquote className="testimonial-card__quote">{t.quote}</blockquote>
+                  <p className="text-sm leading-[1.65] text-muted">{t.quote}</p>
                 </div>
-                <div className="testimonial-card__author">
-                  <img src={t.avatar} alt={t.name} className="testimonial-card__avatar-img" />
+                <div className="flex items-center gap-3">
+                  <img
+                    src={t.avatar}
+                    alt={t.name}
+                    className="w-11 h-11 rounded-full object-cover shrink-0"
+                  />
                   <div>
-                    <p className="testimonial-card__name">{t.name}</p>
-                    <p className="testimonial-card__detail">{t.detail}</p>
+                    <p className="font-bold text-[15px] text-ink">{t.name}</p>
+                    <p className="text-[13px] text-muted">{t.detail}</p>
                   </div>
                 </div>
               </div>
@@ -217,27 +606,73 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="faq" id="faq">
-        <div className="faq__container">
-          <div className="faq__header animate-on-scroll">
-            <div className="section-badge">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <circle cx="12" cy="12" r="10" /><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3" /><path d="M12 17h.01" />
-              </svg>
-              <span>FAQ</span>
-            </div>
-            <h2 className="section-title">
-              <span>Frequently Asked </span><span className="text-accent">Questions</span>
-            </h2>
-            <p className="section-description">Find answers to the most commonly asked questions about our clinic and services.</p>
+      {/* 9 · NEWS */}
+      <section className="bg-white py-[100px]" id="media">
+        <div className="max-w-[1440px] mx-auto px-[100px] text-center">
+          <h2 className="font-heading text-[2.5rem] font-extrabold text-ink mb-4">
+            Atlantis Clinic <span className="text-accent">News</span> And
+            Insights
+          </h2>
+          <p className="text-base text-muted max-w-[620px] mx-auto mb-14 leading-relaxed">
+            Updates, announcements, and expert perspectives from Atlantis
+            Clinic, covering the latest in advanced skincare, dental care, and
+            patient-focused innovations.
+          </p>
+          <div className="grid grid-cols-4 gap-6 mb-12 text-left xl:grid-cols-2 sm:grid-cols-1">
+            {newsArticles.map((article) => (
+              <Link
+                key={article.id}
+                href={`/media/${article.id}`}
+                className="flex flex-col gap-4 no-underline text-inherit group"
+              >
+                <div className="rounded-2xl overflow-hidden aspect-[4/3]">
+                  <img
+                    src={article.image}
+                    alt={article.title}
+                    className="w-full h-full object-cover block transition-transform duration-300 group-hover:scale-[1.04]"
+                  />
+                </div>
+                <div className="flex flex-col gap-2.5">
+                  <div className="flex items-center justify-between">
+                    <span className="px-[14px] py-[5px] border-[1.5px] border-stroke rounded-full text-[13px] text-ink">
+                      {article.categoryLabel}
+                    </span>
+                    <span className="text-[13px] text-muted">
+                      {article.date}
+                    </span>
+                  </div>
+                  <p className="text-[15px] font-semibold text-ink leading-relaxed">
+                    {article.title}
+                  </p>
+                </div>
+              </Link>
+            ))}
           </div>
+          <div className="flex justify-center">
+            <Link href="/#media" className="btn-pill">
+              <span>View All News</span>
+              <ArrowIcon />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 10 · FAQ */}
+      <section className="bg-white py-[100px]" id="faq">
+        <div className="max-w-[1440px] mx-auto px-[100px]">
+          <h2 className="font-heading text-[2.5rem] font-extrabold text-ink text-center mb-4">
+            Frequently Asked <span className="text-accent">Questions</span>
+          </h2>
+          <p className="text-base text-muted text-center max-w-[680px] mx-auto mb-12 leading-relaxed">
+            You&apos;re never alone. Our dedicated support team is available
+            helping you solve issues fast so you can focus on what you do best.
+          </p>
           <FAQ items={faqItems} />
         </div>
       </section>
 
-      {/* Contact */}
+      {/* 11 · CONTACT */}
       <ContactSection />
     </>
-  )
+  );
 }
