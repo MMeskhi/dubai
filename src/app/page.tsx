@@ -79,8 +79,13 @@ export default function HomePage() {
         <div className="container mx-auto px-[100px] py-20 flex items-center justify-between gap-16 [max-width:900px]:flex-col [max-width:900px]:px-8 [max-width:900px]:py-12 [max-width:900px]:gap-12">
           <div className="flex-1 flex flex-col items-start gap-7 max-w-[600px]">
             <h1 className="font-heading text-[4rem] font-extrabold leading-tight text-ink m-0">
-              <span className="text-accent">Premium</span> Aesthetic Care for
-              Your Skin and Your Smile
+              <span className="whitespace-nowrap">
+                <span className="text-accent">Premium</span> Aesthetic
+              </span>
+              <br />
+              <span className="whitespace-nowrap">Care for Your Skin and</span>
+              <br />
+              <span className="whitespace-nowrap">Your Smile</span>
             </h1>
             <p className="text-base leading-relaxed text-muted max-w-[520px]">
               Experience a seamless blend of advanced dental care and premium
@@ -94,7 +99,7 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="shrink-0">
-            <div className="w-[440px] h-[520px] bg-[#2a1a17] rounded-[24px] p-2 flex flex-col gap-1.5">
+            <div className="w-[324px] h-[577px] rounded-[24px] p-2 flex flex-col gap-1.5">
               <video
                 src="/videos/hero-vid.mp4"
                 autoPlay
@@ -420,7 +425,7 @@ export default function HomePage() {
             delivering high-quality dental treatment at every stage.
           </p>
 
-          <div className="flex items-center justify-center gap-0 mb-8 sm:flex-col sm:gap-2">
+          <div className="flex items-center justify-between gap-0 mb-8 ">
             <span className="px-6 py-[10px] border-[1.5px] border-stroke rounded-full text-[15px] font-medium text-ink bg-white whitespace-nowrap">
               Step #1
             </span>
@@ -434,8 +439,8 @@ export default function HomePage() {
             </span>
           </div>
 
-          <div className="grid grid-cols-3 gap-5 mb-12 text-left md:grid-cols-1">
-            <div className="bg-sepia rounded-[20px] p-8 px-7 flex flex-col gap-4">
+          <div className="grid grid-cols-3 gap-5 mb-12 text-left">
+            <div className="bg-sepia rounded-[20px] p-4 px-7 flex flex-col gap-4">
               <h3 className="text-[17px] font-bold text-ink">
                 Book a Consultation
               </h3>
@@ -445,17 +450,17 @@ export default function HomePage() {
                 with no commitment required.
               </p>
             </div>
-            <div className="bg-brown rounded-[20px] p-8 px-7 flex flex-col gap-4">
-              <h3 className="text-[17px] font-bold text-white">
+            <div className="bg-brown rounded-[20px] flex flex-col gap-4">
+              <h3 className="text-[17px] font-bold text-white pt-4 px-7">
                 Personalized Treatment
               </h3>
-              <p className="text-[15px] leading-[1.65] text-white/75">
+              <p className="text-[15px] leading-[1.65] text-black/75 bg-white rounded-xl mx-2 mb-2 p-6">
                 A detailed, personalized treatment plan that explains
                 recommended procedures, expected timelines, and transparent
                 costs, so you know exactly what to expect.
               </p>
             </div>
-            <div className="bg-sepia rounded-[20px] p-8 px-7 flex flex-col gap-4">
+            <div className="bg-sepia rounded-[20px] p-4 px-7 flex flex-col gap-4">
               <h3 className="text-[17px] font-bold text-ink">
                 Ongoing Expert Care
               </h3>
@@ -488,8 +493,8 @@ export default function HomePage() {
             &amp; derma needs.
           </p>
 
-          <div className="grid grid-cols-4 gap-5 items-start xl:grid-cols-2 sm:grid-cols-1">
-            <div className="bg-brown rounded-[20px_4px_20px_20px] p-9 px-7 flex flex-col items-center gap-2 relative min-h-[280px] justify-center">
+          <div className="grid grid-cols-4 gap-5 items-start">
+            <div className="bg-brown rounded-[20px_4px_20px_20px] p-9 px-7 flex flex-col items-center gap-2 relative min-h-[280px] h-full justify-center">
               <div className="flex gap-1">
                 {[...Array(5)].map((_, i) => (
                   <StarIcon key={i} />
@@ -584,14 +589,14 @@ export default function HomePage() {
             Clinic, covering the latest in advanced skincare, dental care, and
             patient-focused innovations.
           </p>
-          <div className="grid grid-cols-4 gap-6 mb-12 text-left xl:grid-cols-2 sm:grid-cols-1">
+          <div className="grid grid-cols-4 gap-6 mb-12 text-left">
             {newsArticles.map((article) => (
               <Link
                 key={article.id}
                 href={`/media/${article.id}`}
                 className="flex flex-col gap-4 no-underline text-inherit group"
               >
-                <div className="rounded-2xl overflow-hidden aspect-[4/3]">
+                <div className="rounded-2xl overflow-hidden aspect-[4/5]">
                   <img
                     src={article.image}
                     alt={article.title}
