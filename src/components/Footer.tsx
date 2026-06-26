@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -6,16 +6,20 @@ export default function Footer() {
       {/* 4px top gradient divider */}
       <div
         className="h-1 w-full"
-        style={{ background: 'linear-gradient(to right, #CB7266, #F6BC5E, #5F413D, #CB7266)' }}
+        style={{
+          background:
+            "linear-gradient(to right, #CB7266, #F6BC5E, #5F413D, #CB7266)",
+        }}
       />
 
       {/* Main bar */}
-      <div className="max-w-container mx-auto px-12 flex items-center justify-between h-[98px]">
-
+      <div className="container mx-auto px-12 flex items-center justify-between h-[98px]">
         {/* Brand left */}
         <div>
           <Link href="/" className="flex flex-col leading-tight">
-            <span className="font-heading font-bold text-ink text-xl tracking-tight">Atlantis</span>
+            <span className="font-heading font-bold text-ink text-xl tracking-tight">
+              Atlantis
+            </span>
             <span className="text-xs text-muted">Geo Policlinic LLC</span>
           </Link>
         </div>
@@ -24,11 +28,26 @@ export default function Footer() {
         <div className="flex items-center gap-3 text-sm text-ink/70">
           <span>&copy; 2026 Atlantis, LLC. All rights reserved</span>
           <span className="text-ink/30">|</span>
-          <Link href="#" className="hover:text-ink transition-colors duration-300">Terms of service</Link>
+          <Link
+            href="#"
+            className="hover:text-ink transition-colors duration-300"
+          >
+            Terms of service
+          </Link>
           <span className="text-ink/30">|</span>
-          <Link href="#" className="hover:text-ink transition-colors duration-300">Privacy Policy</Link>
+          <Link
+            href="#"
+            className="hover:text-ink transition-colors duration-300"
+          >
+            Privacy Policy
+          </Link>
           <span className="text-ink/30">|</span>
-          <a href="tel:+971542040220" className="hover:text-ink transition-colors duration-300">+971 54 204 0220</a>
+          <a
+            href="tel:+971542040220"
+            className="hover:text-ink transition-colors duration-300"
+          >
+            +971 54 204 0220
+          </a>
         </div>
 
         {/* Social links right */}
@@ -61,8 +80,7 @@ export default function Footer() {
             </svg>
           </a>
         </div>
-
       </div>
     </footer>
-  )
+  );
 }

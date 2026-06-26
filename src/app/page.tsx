@@ -5,6 +5,7 @@ import ContactSection from "@/components/ContactSection";
 import ServicesPreview from "@/components/ServicesPreview";
 import SmileGallery from "@/components/SmileGallery";
 import { articles } from "@/data/articles";
+import GlobeIcon from "@/assets/globeIcon";
 
 export const metadata: Metadata = {
   title: "Atlantis Dental & Aesthetic Clinic Dubai",
@@ -75,7 +76,7 @@ export default function HomePage() {
     <>
       {/* 1 · HERO */}
       <section className="pt-[88px] bg-white" id="about">
-        <div className="max-w-[1440px] mx-auto px-[100px] py-20 flex items-center gap-16 [max-width:900px]:flex-col [max-width:900px]:px-8 [max-width:900px]:py-12 [max-width:900px]:gap-12">
+        <div className="container mx-auto px-[100px] py-20 flex items-center justify-between gap-16 [max-width:900px]:flex-col [max-width:900px]:px-8 [max-width:900px]:py-12 [max-width:900px]:gap-12">
           <div className="flex-1 flex flex-col items-start gap-7 max-w-[600px]">
             <h1 className="font-heading text-[4rem] font-extrabold leading-tight text-ink m-0">
               <span className="text-accent">Premium</span> Aesthetic Care for
@@ -94,24 +95,13 @@ export default function HomePage() {
           </div>
           <div className="shrink-0">
             <div className="w-[440px] h-[520px] bg-[#2a1a17] rounded-[24px] p-2 flex flex-col gap-1.5">
-              <img
-                src="/images/clinic/hero.png"
-                alt="Atlantis Clinic exterior"
-                className="w-full object-cover rounded-2xl"
-                style={{ flex: 2.5 }}
-              />
-              <img
-                src="/images/clinic/mission.png"
-                alt="Clinic interior"
-                className="w-full object-cover rounded-2xl"
-                style={{ flex: 1.5 }}
-              />
-              <img
-                src="/images/clinic/vision.png"
-                alt="Clinic corridor"
-                className="w-full object-cover rounded-2xl"
-                style={{ flex: 1 }}
-              />
+              <video
+                src="/videos/hero-vid.mp4"
+                autoPlay
+                muted
+                loop
+                className="w-full h-full object-cover rounded-2xl"
+              ></video>
             </div>
           </div>
         </div>
@@ -119,29 +109,31 @@ export default function HomePage() {
 
       {/* 2 · WELCOME */}
       <section className="bg-white py-[100px]">
-        <div className="max-w-[1440px] mx-auto px-[100px] flex items-center gap-20 [max-width:900px]:flex-col [max-width:900px]:px-8 [max-width:900px]:gap-12">
-          <div className="relative w-[500px] h-[480px] shrink-0 [max-width:900px]:w-full [max-width:900px]:max-w-[480px] [max-width:900px]:mx-auto">
-            <div className="absolute top-0 left-0 w-[155px] h-[155px] bg-brown rounded-[20px] flex items-center justify-center z-10">
-              <svg viewBox="0 0 60 60" width="48" height="48" fill="white">
-                <path d="M30 4L34.5 25.5L56 30L34.5 34.5L30 56L25.5 34.5L4 30L25.5 25.5Z" />
-              </svg>
+        <div className="container mx-auto px-[100px] flex items-center justify-between gap-20 [max-width:900px]:flex-col [max-width:900px]:px-8 [max-width:900px]:gap-12">
+          <div className="relative w-[500px] h-[468px] shrink-0 [max-width:900px]:w-full [max-width:900px]:max-w-[480px] [max-width:900px]:mx-auto">
+            <div className="flex items-center justify-between w-full gap-4">
+              <div className="w-1/2 h-[226px] bg-brown rounded-[20px] flex items-center justify-center z-10">
+                <svg viewBox="0 0 60 60" width="48" height="48" fill="white">
+                  <path d="M30 4L34.5 25.5L56 30L34.5 34.5L30 56L25.5 34.5L4 30L25.5 25.5Z" />
+                </svg>
+              </div>
+              <div className="w-1/2 h-[226px] bg-brand-yellow rounded-[20px] flex items-center justify-center z-10">
+                <svg viewBox="0 0 80 50" width="60" height="40" fill="none">
+                  <path
+                    d="M8 8 Q40 50 72 8"
+                    stroke="white"
+                    strokeWidth="7"
+                    strokeLinecap="round"
+                    fill="none"
+                  />
+                </svg>
+              </div>
             </div>
-            <div className="absolute top-0 left-[175px] w-[200px] h-[200px] bg-brand-yellow rounded-[20px] flex items-center justify-center z-10">
-              <svg viewBox="0 0 80 50" width="60" height="40" fill="none">
-                <path
-                  d="M8 8 Q40 50 72 8"
-                  stroke="white"
-                  strokeWidth="7"
-                  strokeLinecap="round"
-                  fill="none"
-                />
-              </svg>
-            </div>
-            <div className="absolute bottom-0 left-0 right-0 h-[360px] bg-coral rounded-[20px] z-0" />
+            <div className="absolute bottom-0 left-0 right-0 h-[226px] bg-coral rounded-[20px] z-0" />
             <div className="absolute bottom-0 left-0 right-0 h-[360px] z-20 flex items-end justify-center overflow-hidden rounded-[20px]">
               <img
-                src="/images/team/doctor-2.png"
-                alt="Atlantis medical team"
+                src="/images/welcome.png"
+                alt="Welcome to Atlantis Clinic"
                 className="w-full h-full object-cover object-top"
               />
             </div>
@@ -173,7 +165,7 @@ export default function HomePage() {
 
       {/* 3 · REDEFINING TECHNOLOGY */}
       <section className="bg-sepia py-[100px]">
-        <div className="max-w-[1440px] mx-auto px-[100px]">
+        <div className="container mx-auto px-[100px]">
           <div className="text-center mb-[60px]">
             <h2 className="font-heading text-[2.5rem] font-extrabold text-ink leading-snug max-w-[820px] mx-auto mb-5">
               We Are <span className="text-accent">Redefining Dental</span> And{" "}
@@ -187,38 +179,55 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-4 gap-5 items-stretch xl:grid-cols-2 sm:grid-cols-1">
-            <div className="bg-white rounded-[20px] p-7 flex flex-col gap-4 min-h-[340px] relative overflow-hidden">
+          <div className="grid grid-cols-4 gap-5 items-stretch xl:grid-cols-4 sm:grid-cols-1">
+            <div className="bg-white rounded-[20px] p-7 flex flex-col justify-between gap-4 min-h-[340px] relative overflow-hidden">
               <div className="w-11 h-11 rounded-full flex items-center justify-center shrink-0 bg-coral">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="white">
-                  <path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm0 2c1.5 0 3.2 2.1 4 5H8c.8-2.9 2.5-5 4-5zm-5 6h10c.1.6.2 1.3.2 2s-.1 1.4-.2 2H7c-.1-.6-.2-1.3-.2-2s.1-1.4.2-2zm1 5h8c-.8 2.9-2.5 5-4 5s-3.2-2.1-4-5z" />
+                <svg
+                  viewBox="0 0 24 24"
+                  width="22"
+                  height="22"
+                  fill="none"
+                  stroke="white"
+                  strokeWidth="1.5"
+                >
+                  <circle cx="12" cy="12" r="9" />
+                  <path
+                    d="M3 12h18M12 3c2.5 2.8 4 6 4 9s-1.5 6.2-4 9M12 3c-2.5 2.8-4 6-4 9s1.5 6.2 4 9"
+                    strokeLinecap="round"
+                  />
                 </svg>
               </div>
-              <h3 className="text-[17px] font-bold text-ink">
-                International Launch
-              </h3>
-              <p className="text-[15px] leading-relaxed text-muted">
-                At our clinic, we take pride in our highly skilled and efficient
-                team of dental specialists and skin care experts who are always
-                ready to meet your dental &amp; skin care needs.
-              </p>
+              <div className="flex flex-col gap-2">
+                <h3 className="text-[17px] font-bold text-ink">
+                  International Launch
+                </h3>
+                <p className="text-[15px] leading-relaxed text-ink/80">
+                  At our clinic, we take pride in our highly skilled and
+                  efficient team of dental specialists and skin care experts who
+                  are always ready to meet your dental &amp; skin care needs.
+                </p>
+              </div>
             </div>
 
-            <div className="bg-white rounded-[20px] p-0 gap-0 flex flex-col min-h-[340px] relative overflow-hidden">
+            <div className="bg-white rounded-[20px] min-h-[340px] relative overflow-hidden bg-[url(/images/clinic/clinic-bg.png)] bg-cover bg-center">
               <img
                 src="/images/team/doctor-1.png"
                 alt="Online Medical Assistance"
-                className="w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-cover"
               />
-              <div className="absolute top-4 right-4 w-14 h-14 rounded-full overflow-hidden border-2 border-white">
-                <img src="/images/team/doctor-3.png" alt="" />
+              <div className="absolute top-4 right-4 w-16 h-16 rounded-xl overflow-hidden border-2 border-white shadow-sm">
+                <img
+                  src="/images/team/doctor-3.png"
+                  alt=""
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <div className="absolute bottom-0 left-0 right-0 bg-white px-5 py-[14px] font-semibold text-[15px] rounded-b-[20px]">
+              <div className="absolute bottom-4 left-4 right-4 bg-white px-5 py-4 font-bold text-[15px] text-ink text-center rounded-2xl shadow-sm">
                 Online Medical Assistance
               </div>
             </div>
 
-            <div className="bg-white rounded-[20px] p-7 flex flex-col gap-4 min-h-[340px] relative overflow-hidden">
+            <div className="bg-white rounded-[20px] p-7 flex flex-col justify-between gap-4 min-h-[340px] relative overflow-hidden">
               <div className="flex items-center gap-3">
                 <div className="w-11 h-11 rounded-full flex items-center justify-center shrink-0 bg-brand-yellow">
                   <svg
@@ -251,78 +260,35 @@ export default function HomePage() {
                   />
                 </div>
               </div>
-              <h3 className="text-[17px] font-bold text-ink">
-                24 hour post support
-              </h3>
-              <p className="text-[15px] leading-relaxed text-muted">
-                We will take care of you post procedures and be readily
-                available to help and assist you when needed. We are just one
-                phone call away for any kind of support and assistance.
-              </p>
+              <div className="flex flex-col gap-2">
+                <h3 className="text-[17px] font-bold text-ink">
+                  24 hour post support
+                </h3>
+                <p className="text-[15px] leading-relaxed text-ink/80">
+                  We will take care of you post procedures and be readily
+                  available to help and assist you when needed. We are just one
+                  phone call away for any kind of support and assistance.
+                </p>
+              </div>
             </div>
 
             <div className="bg-brown rounded-[20px] p-7 flex flex-col gap-4 min-h-[340px] relative overflow-hidden">
               <h3 className="text-[17px] font-bold text-white">
                 Collaborative Healthcare
               </h3>
-              <p className="text-[15px] leading-relaxed text-white/70">
+              <p className="text-[15px] leading-relaxed text-[#D1D1D1]">
                 Entails teamwork among professionals from various fields for
                 holistic patient care
               </p>
               <div
-                className="absolute bottom-[-40px] right-[-40px] opacity-80 pointer-events-none"
+                className="absolute -bottom-4 right-0 pointer-events-none"
                 aria-hidden="true"
               >
-                <svg viewBox="0 0 200 200" width="180" height="180" fill="none">
-                  <ellipse
-                    cx="100"
-                    cy="100"
-                    rx="92"
-                    ry="92"
-                    stroke="rgba(255,255,255,0.12)"
-                    strokeWidth="1"
-                  />
-                  <ellipse
-                    cx="100"
-                    cy="100"
-                    rx="70"
-                    ry="92"
-                    stroke="rgba(255,255,255,0.12)"
-                    strokeWidth="1"
-                  />
-                  <ellipse
-                    cx="100"
-                    cy="100"
-                    rx="40"
-                    ry="92"
-                    stroke="rgba(255,255,255,0.12)"
-                    strokeWidth="1"
-                  />
-                  <ellipse
-                    cx="100"
-                    cy="100"
-                    rx="92"
-                    ry="38"
-                    stroke="rgba(255,255,255,0.12)"
-                    strokeWidth="1"
-                  />
-                  <ellipse
-                    cx="100"
-                    cy="100"
-                    rx="92"
-                    ry="65"
-                    stroke="rgba(255,255,255,0.12)"
-                    strokeWidth="1"
-                  />
-                  <line
-                    x1="8"
-                    y1="100"
-                    x2="192"
-                    y2="100"
-                    stroke="rgba(255,255,255,0.12)"
-                    strokeWidth="1"
-                  />
-                </svg>
+                <img
+                  src="images/assets/globe.png"
+                  alt="Globe"
+                  className="w-full h-full"
+                />
               </div>
             </div>
           </div>
@@ -331,7 +297,7 @@ export default function HomePage() {
 
       {/* 4 · TEAM */}
       <section className="bg-white py-[100px]" id="team">
-        <div className="max-w-[1440px] mx-auto px-[100px]">
+        <div className="container mx-auto px-[100px]">
           <div className="text-center mb-[60px] flex flex-col items-center gap-5">
             <div className="section-badge">
               <svg
@@ -359,7 +325,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-4 gap-5 items-start md:grid-cols-2 sm:grid-cols-1">
+          <div className="grid grid-cols-4 gap-5 items-start md:grid-cols-4 sm:grid-cols-1">
             {[
               {
                 img: "/images/team/doctor-1.png",
@@ -419,7 +385,7 @@ export default function HomePage() {
               </div>
             ))}
 
-            <div className="bg-brown min-h-[300px] flex items-center justify-center rounded-[20px] overflow-visible relative">
+            <div className="bg-brown max-h-[405px] h-full flex items-center justify-center rounded-[20px] overflow-visible relative">
               <div className="flex flex-col items-center gap-5 p-8">
                 <div className="w-[72px] h-[72px] rounded-full border border-white/40 flex items-center justify-center">
                   <svg viewBox="0 0 60 60" width="28" height="28" fill="white">
@@ -444,7 +410,7 @@ export default function HomePage() {
 
       {/* 7 · PATH TO HEALTHIER SMILE */}
       <section className="bg-white py-[100px]">
-        <div className="max-w-[1440px] mx-auto px-[100px] text-center">
+        <div className="container mx-auto px-[100px] text-center">
           <h2 className="font-heading text-[2.5rem] font-extrabold text-ink mb-5">
             Your Path to a Healthier <span className="text-accent">Smile</span>
           </h2>
@@ -512,7 +478,7 @@ export default function HomePage() {
 
       {/* 8 · TESTIMONIALS */}
       <section className="bg-sepia py-[100px]" id="testimonials">
-        <div className="max-w-[1440px] mx-auto px-[100px]">
+        <div className="container mx-auto px-[100px]">
           <h2 className="font-heading text-[2.5rem] font-extrabold text-ink mb-3">
             Client Satisfaction <span className="text-accent">Guaranteed</span>
           </h2>
@@ -608,7 +574,7 @@ export default function HomePage() {
 
       {/* 9 · NEWS */}
       <section className="bg-white py-[100px]" id="media">
-        <div className="max-w-[1440px] mx-auto px-[100px] text-center">
+        <div className="container mx-auto px-[100px] text-center">
           <h2 className="font-heading text-[2.5rem] font-extrabold text-ink mb-4">
             Atlantis Clinic <span className="text-accent">News</span> And
             Insights
@@ -659,7 +625,7 @@ export default function HomePage() {
 
       {/* 10 · FAQ */}
       <section className="bg-white py-[100px]" id="faq">
-        <div className="max-w-[1440px] mx-auto px-[100px]">
+        <div className="container mx-auto px-[100px]">
           <h2 className="font-heading text-[2.5rem] font-extrabold text-ink text-center mb-4">
             Frequently Asked <span className="text-accent">Questions</span>
           </h2>

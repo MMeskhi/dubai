@@ -85,7 +85,7 @@ export default function Nav() {
       id="nav"
       className={`fixed top-0 left-0 right-0 z-50 h-[88px] bg-white border-b border-stroke transition-all duration-300${scrolled ? " shadow-md" : ""}`}
     >
-      <div className="max-w-container-xl mx-auto px-6 h-full flex items-center justify-between">
+      <div className="container mx-auto px-6 h-full flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 no-underline">
           <div className="w-12 h-12 shrink-0">
@@ -100,7 +100,7 @@ export default function Nav() {
             <span className="font-heading font-semibold text-base text-ink">
               Atlantis Geo
             </span>
-            <span className="text-sm text-muted">Policlinic LLC</span>
+            <span className="text-sm text-muted">Geo Policlinic LLC</span>
           </div>
         </Link>
 
