@@ -15,7 +15,7 @@ const CalendarIcon = () => (
 );
 
 const navLinks = [
-  { href: "/", label: "About Us" },
+  { href: "/about", label: "About Us" },
   { href: "/#services", label: "Services" },
   { href: "/#media", label: "Media" },
   { href: "/#contact", label: "Contact Us" },
