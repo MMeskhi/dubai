@@ -17,7 +17,7 @@ export default function FAQ({ items }: { items: FAQItem[] }) {
         return (
           <div key={i} className={`${i < items.length - 1 ? 'border-b border-stroke' : ''}`}>
             <button
-              className="flex items-center gap-4 w-full px-6 py-5 bg-transparent text-left hover:bg-[#fafaf9] transition-colors"
+              className="flex items-center gap-4 w-full px-6 py-5 bg-transparent text-left hover:bg-[#fafaf9] transition-colors max-[480px]:px-4 max-[480px]:py-4 max-[480px]:gap-3"
               aria-expanded={isOpen}
               onClick={() => setOpenIndex(isOpen ? null : i)}
             >

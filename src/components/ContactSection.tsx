@@ -43,18 +43,18 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="bg-sepia py-20" id="contact">
-      <div className="container mx-auto px-[100px]">
-        <div className="bg-white rounded-[24px] grid grid-cols-2 md:grid-cols-1 overflow-hidden min-h-[600px]">
-          <div className="p-[52px_48px] flex flex-col gap-0">
-            <h2 className="font-heading text-[2rem] font-extrabold text-ink mb-2">
+    <section className="bg-sepia py-20 max-[768px]:py-16 max-[480px]:py-12" id="contact">
+      <div className="container mx-auto px-[100px] max-[1200px]:px-12 max-[600px]:px-5">
+        <div className="bg-white rounded-[24px] grid grid-cols-2 max-[900px]:grid-cols-1 overflow-hidden min-h-[600px] max-[768px]:min-h-0 max-[480px]:rounded-2xl">
+          <div className="p-[52px_48px] flex flex-col gap-0 max-[768px]:p-8 max-[480px]:p-5">
+            <h2 className="font-heading text-[2rem] font-extrabold text-ink mb-2 max-[480px]:text-[1.75rem]">
               <span className="text-accent">Contact</span> Us
             </h2>
-            <p className="text-[15px] text-muted mb-8">
+            <p className="text-[15px] text-muted mb-8 max-[480px]:mb-6">
               provide a brief summary of your needs and we&apos;ll support you
             </p>
             <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
-              <div className="grid grid-cols-2 gap-5">
+              <div className="grid grid-cols-2 gap-5 max-[600px]:grid-cols-1">
                 <div className="flex flex-col gap-1.5">
                   <label
                     htmlFor="ct-name"
@@ -88,7 +88,7 @@ export default function ContactSection() {
                   />
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-5">
+              <div className="grid grid-cols-2 gap-5 max-[600px]:grid-cols-1">
                 <div className="flex flex-col gap-1.5">
                   <label
                     htmlFor="ct-phone"
@@ -146,7 +146,7 @@ export default function ContactSection() {
               </div>
               <button
                 type="submit"
-                className={`btn-pill self-start mt-1${status === "sent" ? " bg-[#2D8B4E]" : ""}`}
+                className={`btn-pill self-start mt-1 max-[480px]:self-stretch max-[480px]:justify-center${status === "sent" ? " bg-[#2D8B4E]" : ""}`}
                 disabled={status === "sending"}
               >
                 <span>
@@ -170,8 +170,8 @@ export default function ContactSection() {
             </form>
           </div>
 
-          <div className="flex flex-col border-l border-stroke">
-            <div className="flex-1 relative min-h-[360px]">
+          <div className="flex flex-col border-l border-stroke max-[900px]:border-l-0 max-[900px]:border-t">
+            <div className="flex-1 relative min-h-[360px] max-[768px]:min-h-[280px] max-[480px]:min-h-[220px]">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1500!2d55.2630387!3d25.2319362!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDEzJzU1LjAiTiA1NcKwMTUnNDYuOSJF!5e0!3m2!1sen!2sae!4v1700000000000"
                 allowFullScreen
@@ -184,9 +184,10 @@ export default function ContactSection() {
                 href="https://maps.app.goo.gl/xyBBtZf3sFhwu11RA"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="absolute top-4 right-4 flex items-center gap-2 bg-white px-[14px] py-2 rounded-full text-sm font-medium text-ink no-underline shadow-md z-10 hover:shadow-lg"
+                className="absolute top-4 right-4 flex items-center gap-2 bg-white px-[14px] py-2 rounded-full text-sm font-medium text-ink no-underline shadow-md z-10 hover:shadow-lg max-[480px]:top-3 max-[480px]:right-3 max-[480px]:px-3 max-[480px]:py-1.5 max-[480px]:text-xs"
               >
-                <span>View on Google Maps</span>
+                <span className="max-[380px]:hidden">View on Google Maps</span>
+                <span className="hidden max-[380px]:inline">Maps</span>
                 <svg viewBox="0 0 24 24" width="18" height="18">
                   <path
                     d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"
@@ -207,11 +208,13 @@ export default function ContactSection() {
                 </svg>
               </a>
             </div>
-            <div className="px-7 py-6 flex flex-col gap-[14px] border-t border-stroke">
-              <div className="flex items-center gap-3 text-[15px] text-ink">
-                <span className="w-9 h-9 rounded-lg bg-coral/10 flex items-center justify-center shrink-0 text-coral">
+            <div className="px-7 py-6 flex flex-col gap-[14px] border-t border-stroke max-[480px]:px-5 max-[480px]:py-5">
+              <div className="flex items-center gap-3 text-[15px] text-ink max-[480px]:text-sm">
+                <span className="w-9 h-9 rounded-lg bg-coral/10 flex items-center justify-center shrink-0 text-coral max-[480px]:w-8 max-[480px]:h-8">
                   <svg
                     viewBox="0 0 24 24"
+                    width="18"
+                    height="18"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="1.5"
@@ -227,12 +230,16 @@ export default function ContactSection() {
                     />
                   </svg>
                 </span>
-                <span>+971 502509511</span>
+                <a href="tel:+971502509511" className="hover:text-coral transition-colors">
+                  +971 502509511
+                </a>
               </div>
-              <div className="flex items-center gap-3 text-[15px] text-ink">
-                <span className="w-9 h-9 rounded-lg bg-coral/10 flex items-center justify-center shrink-0 text-coral">
+              <div className="flex items-center gap-3 text-[15px] text-ink max-[480px]:text-sm">
+                <span className="w-9 h-9 rounded-lg bg-coral/10 flex items-center justify-center shrink-0 text-coral max-[480px]:w-8 max-[480px]:h-8">
                   <svg
                     viewBox="0 0 24 24"
+                    width="18"
+                    height="18"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="1.5"
@@ -241,12 +248,19 @@ export default function ContactSection() {
                     <path d="M22 6l-10 7L2 6" />
                   </svg>
                 </span>
-                <span>ana.javelidze@atlantisgeo.ae</span>
+                <a
+                  href="mailto:ana.javelidze@atlantisgeo.ae"
+                  className="break-all hover:text-coral transition-colors"
+                >
+                  ana.javelidze@atlantisgeo.ae
+                </a>
               </div>
-              <div className="flex items-center gap-3 text-[15px] text-ink">
-                <span className="w-9 h-9 rounded-lg bg-coral/10 flex items-center justify-center shrink-0 text-coral">
+              <div className="flex items-center gap-3 text-[15px] text-ink max-[480px]:text-sm">
+                <span className="w-9 h-9 rounded-lg bg-coral/10 flex items-center justify-center shrink-0 text-coral max-[480px]:w-8 max-[480px]:h-8">
                   <svg
                     viewBox="0 0 24 24"
+                    width="18"
+                    height="18"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="1.5"
@@ -257,10 +271,12 @@ export default function ContactSection() {
                 </span>
                 <span>V008 Jumeirah 1, Dubai</span>
               </div>
-              <div className="flex items-center gap-3 text-[15px] text-ink">
-                <span className="w-9 h-9 rounded-lg bg-coral/10 flex items-center justify-center shrink-0 text-coral">
+              <div className="flex items-center gap-3 text-[15px] text-ink max-[480px]:text-sm">
+                <span className="w-9 h-9 rounded-lg bg-coral/10 flex items-center justify-center shrink-0 text-coral max-[480px]:w-8 max-[480px]:h-8">
                   <svg
                     viewBox="0 0 24 24"
+                    width="18"
+                    height="18"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="1.5"

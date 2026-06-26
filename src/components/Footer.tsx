@@ -13,10 +13,10 @@ export default function Footer() {
       />
 
       {/* Main bar */}
-      <div className="container mx-auto px-12 flex items-center justify-between h-[98px]">
+      <div className="container mx-auto px-[100px] max-[1200px]:px-12 max-[600px]:px-5 flex items-center justify-between gap-6 min-h-[98px] py-6 max-[900px]:flex-col max-[900px]:text-center max-[900px]:gap-8 max-[480px]:py-8">
         {/* Brand left */}
-        <div>
-          <Link href="/" className="flex flex-col leading-tight">
+        <div className="shrink-0">
+          <Link href="/" className="flex flex-col leading-tight max-[900px]:items-center">
             <span className="font-heading font-bold text-ink text-xl tracking-tight">
               Atlantis
             </span>
@@ -25,33 +25,33 @@ export default function Footer() {
         </div>
 
         {/* Center: copyright + links */}
-        <div className="flex items-center gap-3 text-sm text-ink/70">
-          <span>&copy; 2026 Atlantis, LLC. All rights reserved</span>
-          <span className="text-ink/30">|</span>
+        <div className="flex items-center flex-wrap justify-center gap-x-3 gap-y-2 text-sm text-ink/70 max-[600px]:flex-col max-[600px]:gap-2">
+          <span className="max-[600px]:order-1">&copy; 2026 Atlantis, LLC. All rights reserved</span>
+          <span className="text-ink/30 max-[600px]:hidden">|</span>
           <Link
             href="#"
-            className="hover:text-ink transition-colors duration-300"
+            className="hover:text-ink transition-colors duration-300 max-[600px]:order-2"
           >
             Terms of service
           </Link>
-          <span className="text-ink/30">|</span>
+          <span className="text-ink/30 max-[600px]:hidden">|</span>
           <Link
             href="#"
-            className="hover:text-ink transition-colors duration-300"
+            className="hover:text-ink transition-colors duration-300 max-[600px]:order-3"
           >
             Privacy Policy
           </Link>
-          <span className="text-ink/30">|</span>
+          <span className="text-ink/30 max-[600px]:hidden">|</span>
           <a
             href="tel:+971542040220"
-            className="hover:text-ink transition-colors duration-300"
+            className="hover:text-ink transition-colors duration-300 max-[600px]:order-4"
           >
             +971 54 204 0220
           </a>
         </div>
 
         {/* Social links right */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 shrink-0 max-[900px]:justify-center">
           <a
             href="#"
             aria-label="Facebook"
