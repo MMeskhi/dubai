@@ -12,7 +12,7 @@ export default function AboutPage() {
   return (
     <>
       <AboutIntro />
-      <HomeSectionsFromTeam />
+      <HomeSectionsFromTeam variant="about" />
     </>
   );
 }

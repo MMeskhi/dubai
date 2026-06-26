@@ -109,7 +109,12 @@ const testimonials = [
   },
 ];
 
-export default function HomeSectionsFromTeam() {
+export default function HomeSectionsFromTeam({
+  variant = "full",
+}: {
+  variant?: "full" | "about";
+}) {
+  const isFull = variant === "full";
   const newsArticles = articles.slice(0, 4);
 
   return (
@@ -201,6 +206,159 @@ export default function HomeSectionsFromTeam() {
         </div>
       </section>
 
+      {isFull && (
+        <>
+          <ServicesPreview />
+          <SmileGallery />
+        </>
+      )}
+
+      {isFull && (
+      <section className="bg-white py-[100px] max-[768px]:py-16 max-[480px]:py-12">
+        <div className="container mx-auto px-[100px] text-center max-[1200px]:px-12 max-[600px]:px-5">
+          <h2 className="font-heading text-[2.5rem] font-extrabold text-ink mb-5 max-[768px]:text-[2rem] max-[480px]:text-[1.75rem]">
+            Your Path to a Healthier <span className="text-accent">Smile</span>
+          </h2>
+          <p className="text-base text-muted max-w-[680px] mx-auto mb-14 leading-relaxed max-[768px]:mb-10">
+            From your first visit to ongoing care, our process is designed to be
+            simple, transparent, and focused on understanding your needs while
+            delivering high-quality dental treatment at every stage.
+          </p>
+
+          <div className="flex items-center justify-between gap-0 mb-8 max-[768px]:flex-col max-[768px]:gap-3">
+            <span className="px-6 py-[10px] border-[1.5px] border-stroke rounded-full text-[15px] font-medium text-ink bg-white whitespace-nowrap max-[480px]:w-full max-[480px]:text-center">
+              Step #1
+            </span>
+            <span className="flex-1 h-0 border-t-2 border-dashed border-stroke max-w-[200px] max-[768px]:hidden" />
+            <span className="px-6 py-[10px] border-[1.5px] border-coral rounded-full text-[15px] font-semibold bg-coral text-white whitespace-nowrap max-[480px]:w-full max-[480px]:text-center">
+              Step #2
+            </span>
+            <span className="flex-1 h-0 border-t-2 border-dashed border-stroke max-w-[200px] max-[768px]:hidden" />
+            <span className="px-6 py-[10px] border-[1.5px] border-stroke rounded-full text-[15px] font-medium text-ink bg-white whitespace-nowrap max-[480px]:w-full max-[480px]:text-center">
+              Step #3
+            </span>
+          </div>
+
+          <div className="grid grid-cols-3 gap-5 mb-12 text-left max-[1024px]:grid-cols-1 max-[1024px]:max-w-[520px] max-[1024px]:mx-auto">
+            <div className="bg-sepia rounded-[20px] p-4 px-7 flex flex-col gap-4">
+              <h3 className="text-[17px] font-bold text-ink">
+                Book a Consultation
+              </h3>
+              <p className="text-[15px] leading-[1.65] text-muted">
+                A thorough dental examination designed to evaluate your oral
+                health, identify concerns, and clearly understand your goals,
+                with no commitment required.
+              </p>
+            </div>
+            <div className="bg-brown rounded-[20px] flex flex-col gap-4">
+              <h3 className="text-[17px] font-bold text-white pt-4 px-7">
+                Personalized Treatment
+              </h3>
+              <p className="text-[15px] leading-[1.65] text-black/75 bg-white rounded-xl mx-2 mb-2 p-6">
+                A detailed, personalized treatment plan that explains
+                recommended procedures, expected timelines, and transparent
+                costs, so you know exactly what to expect.
+              </p>
+            </div>
+            <div className="bg-sepia rounded-[20px] p-4 px-7 flex flex-col gap-4">
+              <h3 className="text-[17px] font-bold text-ink">
+                Ongoing Expert Care
+              </h3>
+              <p className="text-[15px] leading-[1.65] text-muted">
+                Expert dental treatment performed using advanced technology,
+                combined with attentive follow-up care and guidance to ensure
+                long-term oral health and confidence.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex justify-center">
+            <Link href="/#contact" className="btn-pill">
+              <span>Book Consultation</span>
+              <CalendarIcon />
+            </Link>
+          </div>
+        </div>
+      </section>
+      )}
+
+      <section
+        className="bg-sepia py-[100px] max-[768px]:py-16 max-[480px]:py-12"
+        id="testimonials"
+      >
+        <div className="container mx-auto px-[100px] max-[1200px]:px-12 max-[600px]:px-5">
+          <h2 className="font-heading text-[2.5rem] font-extrabold text-ink mb-3 max-[768px]:text-[2rem] max-[480px]:text-[1.75rem]">
+            Client Satisfaction <span className="text-accent">Guaranteed</span>
+          </h2>
+          <p className="text-base text-muted mb-12 max-w-[760px] max-[768px]:mb-8">
+            At our clinic, we take pride in our highly skilled and efficient
+            team of dental specialists who are always ready to meet your dental
+            &amp; derma needs.
+          </p>
+
+          <div className="grid grid-cols-4 gap-5 items-start max-[1024px]:grid-cols-2 max-[600px]:grid-cols-1">
+            <div className="bg-brown rounded-[20px_4px_20px_20px] p-9 px-7 flex flex-col items-center gap-2 relative min-h-[280px] h-full justify-center">
+              <div className="flex gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <StarIcon key={i} />
+                ))}
+              </div>
+              <div className="text-5xl font-extrabold text-white leading-none">
+                5.0
+              </div>
+              <div className="text-sm text-white/70 text-center">
+                Trusted by 1000+ users
+              </div>
+              <div className="absolute bottom-5 left-0 right-0 flex justify-between px-4 pointer-events-none">
+                <img
+                  src="/images/testimonials/laurel-left.svg"
+                  alt=""
+                  className="w-14 opacity-60"
+                />
+                <img
+                  src="/images/testimonials/laurel-right.svg"
+                  alt=""
+                  className="w-14 opacity-60"
+                />
+              </div>
+            </div>
+
+            {testimonials.map((t, i) => (
+              <div
+                key={i}
+                className="bg-white rounded-[20px] p-7 flex flex-col justify-between gap-6 min-h-[280px]"
+              >
+                <div className="flex flex-col gap-4">
+                  <div className="flex items-center gap-2.5">
+                    <span className="text-[22px] font-extrabold text-ink">
+                      5.0
+                    </span>
+                    <div className="flex gap-[3px]">
+                      {[...Array(5)].map((_, j) => (
+                        <StarIcon key={j} />
+                      ))}
+                    </div>
+                  </div>
+                  <p className="text-sm leading-[1.65] text-muted">{t.quote}</p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <img
+                    src={t.avatar}
+                    alt={t.name}
+                    className="w-11 h-11 rounded-full object-cover shrink-0"
+                  />
+                  <div>
+                    <p className="font-bold text-[15px] text-ink">{t.name}</p>
+                    <p className="text-[13px] text-muted">{t.detail}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {isFull && (
       <section
         className="bg-white py-[100px] max-[768px]:py-16 max-[480px]:py-12"
         id="media"
@@ -246,13 +404,14 @@ export default function HomeSectionsFromTeam() {
             ))}
           </div>
           <div className="flex justify-center">
-            <Link href="/#media" className="btn-pill">
+            <Link href="/media" className="btn-pill">
               <span>View All News</span>
               <ArrowIcon />
             </Link>
           </div>
         </div>
       </section>
+      )}
 
       <section
         className="bg-white py-[100px] max-[768px]:py-16 max-[480px]:py-12"
