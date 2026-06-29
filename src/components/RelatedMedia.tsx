@@ -39,15 +39,15 @@ export default function RelatedMedia({
 
   return (
     <section className="bg-white py-[100px] max-[768px]:py-16 max-[480px]:py-12">
-      <div className="container mx-auto px-[100px] max-[1200px]:px-12 max-[600px]:px-5">
+      <div className="container mx-auto px-6 max-[1200px]:px-12 max-[600px]:px-5">
         <div className="text-center flex flex-col items-center gap-5 mb-12 max-[768px]:mb-8">
           <h2 className="font-heading text-[2.5rem] font-extrabold text-ink leading-tight max-[768px]:text-[2rem] max-[480px]:text-[1.75rem]">
             <span className="text-accent">Related</span> Media
           </h2>
           <p className="text-base text-muted max-w-[660px] leading-relaxed">
             Discover more stories, expert insights, and updates related to this
-            topic, including recent news, treatment innovations, and perspectives
-            from across Atlantis Clinic.
+            topic, including recent news, treatment innovations, and
+            perspectives from across Atlantis Clinic.
           </p>
         </div>
 

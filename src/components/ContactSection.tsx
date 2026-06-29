@@ -43,8 +43,11 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="bg-sepia py-20 max-[768px]:py-16 max-[480px]:py-12" id="contact">
-      <div className="container mx-auto px-[100px] max-[1200px]:px-12 max-[600px]:px-5">
+    <section
+      className="bg-sepia py-20 max-[768px]:py-16 max-[480px]:py-12"
+      id="contact"
+    >
+      <div className="container mx-auto px-6 max-[1200px]:px-12 max-[600px]:px-5">
         <div className="bg-white rounded-[24px] grid grid-cols-2 max-[900px]:grid-cols-1 overflow-hidden min-h-[600px] max-[768px]:min-h-0 max-[480px]:rounded-2xl">
           <div className="p-[52px_48px] flex flex-col gap-0 max-[768px]:p-8 max-[480px]:p-5">
             <h2 className="font-heading text-[2rem] font-extrabold text-ink mb-2 max-[480px]:text-[1.75rem]">
@@ -230,7 +233,10 @@ export default function ContactSection() {
                     />
                   </svg>
                 </span>
-                <a href="tel:+971502509511" className="hover:text-coral transition-colors">
+                <a
+                  href="tel:+971502509511"
+                  className="hover:text-coral transition-colors"
+                >
                   +971 502509511
                 </a>
               </div>

@@ -61,7 +61,7 @@ export default function ArticlePage({ params }: { params: { id: string } }) {
   return (
     <>
       <article
-        className="mt-[88px] bg-white text-ink px-[100px] pt-[60px] pb-[100px] max-[1200px]:px-12 max-[768px]:px-8 max-[768px]:pt-10 max-[768px]:pb-16 max-[600px]:px-5 max-[480px]:pt-8 max-[480px]:pb-12"
+        className="mt-[88px] bg-white text-ink px-6 pt-[60px] pb-[100px] max-[1200px]:px-12 max-[768px]:px-8 max-[768px]:pt-10 max-[768px]:pb-16 max-[600px]:px-5 max-[480px]:pt-8 max-[480px]:pb-12"
         id="article"
       >
         <div className="max-w-[890px] mx-auto flex flex-col gap-6">
@@ -112,7 +112,7 @@ export default function ArticlePage({ params }: { params: { id: string } }) {
         className="bg-white py-[100px] max-[768px]:py-16 max-[480px]:py-12"
         id="faq"
       >
-        <div className="container mx-auto px-[100px] max-[1200px]:px-12 max-[600px]:px-5">
+        <div className="container mx-auto px-6 max-[1200px]:px-12 max-[600px]:px-5">
           <div className="text-center mb-12 flex flex-col items-center gap-5 max-[768px]:mb-8">
             <div className="section-badge">
               <svg

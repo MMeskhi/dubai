@@ -129,7 +129,7 @@ export default function ServicesPreview() {
 
   return (
     <section className="bg-white py-[100px]" id="services">
-      <div className="container mx-auto px-[100px] max-[1200px]:px-12 max-[600px]:px-5">
+      <div className="container mx-auto px-6 max-[1200px]:px-12 max-[600px]:px-5">
         {/* Header row */}
         <div className="flex items-start justify-between gap-12 mb-10 max-[900px]:flex-col max-[900px]:gap-6">
           <div className="flex flex-col gap-5">

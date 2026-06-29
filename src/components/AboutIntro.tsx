@@ -10,7 +10,7 @@ export default function AboutIntro() {
     <div className="bg-white text-ink pt-8">
       {/* Welcome */}
       <section className="pt-[88px] pb-8 max-[768px]:pb-12">
-        <div className="container mx-auto px-[100px] max-[1200px]:px-12 max-[600px]:px-5">
+        <div className="container mx-auto px-6 max-[1200px]:px-12 max-[600px]:px-5">
           <h1 className="font-heading text-[2.75rem] font-extrabold mb-4 max-[768px]:text-[2.25rem] max-[480px]:text-[1.875rem] max-[768px]:mb-8">
             Welcome to <span className="text-accent">Atlantis</span> clinic
           </h1>
@@ -24,7 +24,7 @@ export default function AboutIntro() {
 
       {/* Clinic exterior */}
       <section className="pb-20 max-[768px]:pb-14">
-        <div className="container mx-auto px-[100px] max-[1200px]:px-12 max-[600px]:px-5">
+        <div className="container mx-auto px-6 max-[1200px]:px-12 max-[600px]:px-5">
           <img
             src="/images/clinic/clinic-bg.png"
             alt="Atlantis clinic exterior"
@@ -35,7 +35,7 @@ export default function AboutIntro() {
 
       {/* Our Mission */}
       <section className="pb-20 max-[768px]:pb-14">
-        <div className="container mx-auto px-[100px] max-[1200px]:px-12 max-[600px]:px-5">
+        <div className="container mx-auto px-6 max-[1200px]:px-12 max-[600px]:px-5">
           <div className="grid grid-cols-2 gap-12 items-center max-[900px]:grid-cols-1 max-[900px]:gap-8">
             <div className="flex flex-col gap-5 max-[900px]:order-1">
               <h2 className="font-heading text-[2rem] font-extrabold max-[480px]:text-[1.75rem]">
@@ -65,7 +65,7 @@ export default function AboutIntro() {
 
       {/* Our Vision */}
       <section className="pb-[100px] max-[768px]:pb-16">
-        <div className="container mx-auto px-[100px] max-[1200px]:px-12 max-[600px]:px-5">
+        <div className="container mx-auto px-6 max-[1200px]:px-12 max-[600px]:px-5">
           <div className="grid grid-cols-2 gap-12 items-center max-[900px]:grid-cols-1 max-[900px]:gap-8">
             <div className="max-[900px]:order-2">
               <img

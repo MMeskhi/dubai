@@ -36,7 +36,7 @@ export default function HomePage() {
     <>
       {/* 1 · HERO */}
       <section className="pt-[88px] bg-white" id="about">
-        <div className="container mx-auto px-[100px] py-20 flex items-center justify-between gap-16 max-[1200px]:px-12 max-[900px]:flex-col max-[900px]:px-8 max-[900px]:py-12 max-[900px]:gap-12 max-[600px]:px-5 max-[600px]:py-10">
+        <div className="container mx-auto px-6 py-20 flex items-center justify-between gap-16 max-[1200px]:px-12 max-[900px]:flex-col max-[900px]:px-8 max-[900px]:py-12 max-[900px]:gap-12 max-[600px]:px-5 max-[600px]:py-10">
           <div className="flex-1 flex flex-col items-start gap-7 max-w-[600px] max-[900px]:items-center max-[900px]:text-center max-[900px]:max-w-full">
             <h1 className="font-heading text-[4rem] font-extrabold leading-tight text-ink m-0 max-[1024px]:text-[3rem] max-[768px]:text-[2.5rem] max-[480px]:text-[2rem]">
               <span className="whitespace-nowrap max-[480px]:whitespace-normal">
@@ -79,7 +79,7 @@ export default function HomePage() {
 
       {/* 2 · WELCOME */}
       <section className="bg-white py-[100px] max-[768px]:py-16 max-[480px]:py-12">
-        <div className="container mx-auto px-[100px] flex items-center justify-between gap-20 max-[1200px]:px-12 max-[900px]:flex-col max-[900px]:px-8 max-[900px]:gap-12 max-[600px]:px-5">
+        <div className="container mx-auto px-6 flex items-center justify-between gap-20 max-[1200px]:px-12 max-[900px]:flex-col max-[900px]:px-8 max-[900px]:gap-12 max-[600px]:px-5">
           <div className="relative w-[500px] h-[468px] shrink-0 max-[900px]:w-full max-[900px]:max-w-[480px] max-[900px]:mx-auto max-[480px]:h-[400px]">
             <div className="flex items-center justify-between w-full gap-4">
               <div className="w-1/2 h-[226px] bg-brown rounded-[20px] flex items-center justify-center z-10">
@@ -109,7 +109,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="flex-1 flex flex-col items-start gap-6 max-[900px]:items-center max-[900px]:text-center">
+          <div className="flex-1 flex flex-col items-baseline-last gap-6 max-[900px]:items-center max-[900px]:text-center">
             <div className="section-badge">
               <svg viewBox="0 0 24 24" width="20" height="20" fill="#CB7266">
                 <path d="M12 2l1.8 5.4L19.4 9l-4.6 3.3 1.7 5.4L12 14.7l-4.5 3 1.7-5.4L4.6 9l5.6-1.6z" />
@@ -135,7 +135,7 @@ export default function HomePage() {
 
       {/* 3 · REDEFINING TECHNOLOGY */}
       <section className="bg-sepia py-[100px] max-[768px]:py-16 max-[480px]:py-12">
-        <div className="container mx-auto px-[100px] max-[1200px]:px-12 max-[600px]:px-5">
+        <div className="container mx-auto px-6 max-[1200px]:px-12 max-[600px]:px-5">
           <div className="text-center mb-[60px] max-[768px]:mb-10">
             <h2 className="font-heading text-[2.5rem] font-extrabold text-ink leading-snug max-w-[820px] mx-auto mb-5 max-[768px]:text-[2rem] max-[480px]:text-[1.75rem]">
               We Are <span className="text-accent">Redefining Dental</span> And{" "}

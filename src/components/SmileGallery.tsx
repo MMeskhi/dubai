@@ -28,7 +28,7 @@ export default function SmileGallery() {
 
   return (
     <section className="bg-white py-[100px]" id="gallery">
-      <div className="container mx-auto px-[100px] flex items-center gap-[72px] max-[768px]:flex-col max-[768px]:px-8 max-[768px]:gap-10">
+      <div className="container mx-auto px-6 flex items-center gap-[72px] max-[768px]:flex-col max-[768px]:px-8 max-[768px]:gap-10">
         <div className="w-[420px] flex flex-col items-start gap-6 shrink-0 max-[768px]:w-full max-[768px]:max-w-full">
           <div className="section-badge">
             <svg

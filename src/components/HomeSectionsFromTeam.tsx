@@ -123,7 +123,7 @@ export default function HomeSectionsFromTeam({
         className="bg-white py-[100px] max-[768px]:py-16 max-[480px]:py-12"
         id="team"
       >
-        <div className="container mx-auto px-[100px] max-[1200px]:px-12 max-[600px]:px-5">
+        <div className="container mx-auto px-6 max-[1200px]:px-12 max-[600px]:px-5">
           <div className="text-center mb-[60px] flex flex-col items-center gap-5 max-[768px]:mb-10">
             <div className="section-badge">
               <svg
@@ -214,79 +214,80 @@ export default function HomeSectionsFromTeam({
       )}
 
       {isFull && (
-      <section className="bg-white py-[100px] max-[768px]:py-16 max-[480px]:py-12">
-        <div className="container mx-auto px-[100px] text-center max-[1200px]:px-12 max-[600px]:px-5">
-          <h2 className="font-heading text-[2.5rem] font-extrabold text-ink mb-5 max-[768px]:text-[2rem] max-[480px]:text-[1.75rem]">
-            Your Path to a Healthier <span className="text-accent">Smile</span>
-          </h2>
-          <p className="text-base text-muted max-w-[680px] mx-auto mb-14 leading-relaxed max-[768px]:mb-10">
-            From your first visit to ongoing care, our process is designed to be
-            simple, transparent, and focused on understanding your needs while
-            delivering high-quality dental treatment at every stage.
-          </p>
+        <section className="bg-white py-[100px] max-[768px]:py-16 max-[480px]:py-12">
+          <div className="container mx-auto px-6 text-center max-[1200px]:px-12 max-[600px]:px-5">
+            <h2 className="font-heading text-[2.5rem] font-extrabold text-ink mb-5 max-[768px]:text-[2rem] max-[480px]:text-[1.75rem]">
+              Your Path to a Healthier{" "}
+              <span className="text-accent">Smile</span>
+            </h2>
+            <p className="text-base text-muted max-w-[680px] mx-auto mb-14 leading-relaxed max-[768px]:mb-10">
+              From your first visit to ongoing care, our process is designed to
+              be simple, transparent, and focused on understanding your needs
+              while delivering high-quality dental treatment at every stage.
+            </p>
 
-          <div className="flex items-center justify-between gap-0 mb-8 max-[768px]:flex-col max-[768px]:gap-3">
-            <span className="px-6 py-[10px] border-[1.5px] border-stroke rounded-full text-[15px] font-medium text-ink bg-white whitespace-nowrap max-[480px]:w-full max-[480px]:text-center">
-              Step #1
-            </span>
-            <span className="flex-1 h-0 border-t-2 border-dashed border-stroke max-w-[200px] max-[768px]:hidden" />
-            <span className="px-6 py-[10px] border-[1.5px] border-coral rounded-full text-[15px] font-semibold bg-coral text-white whitespace-nowrap max-[480px]:w-full max-[480px]:text-center">
-              Step #2
-            </span>
-            <span className="flex-1 h-0 border-t-2 border-dashed border-stroke max-w-[200px] max-[768px]:hidden" />
-            <span className="px-6 py-[10px] border-[1.5px] border-stroke rounded-full text-[15px] font-medium text-ink bg-white whitespace-nowrap max-[480px]:w-full max-[480px]:text-center">
-              Step #3
-            </span>
-          </div>
+            <div className="flex items-center justify-between gap-0 mb-8 max-[768px]:flex-col max-[768px]:gap-3">
+              <span className="px-6 py-[10px] border-[1.5px] border-stroke rounded-full text-[15px] font-medium text-ink bg-white whitespace-nowrap max-[480px]:w-full max-[480px]:text-center">
+                Step #1
+              </span>
+              <span className="flex-1 h-0 border-t-2 border-dashed border-stroke max-w-[200px] max-[768px]:hidden" />
+              <span className="px-6 py-[10px] border-[1.5px] border-coral rounded-full text-[15px] font-semibold bg-coral text-white whitespace-nowrap max-[480px]:w-full max-[480px]:text-center">
+                Step #2
+              </span>
+              <span className="flex-1 h-0 border-t-2 border-dashed border-stroke max-w-[200px] max-[768px]:hidden" />
+              <span className="px-6 py-[10px] border-[1.5px] border-stroke rounded-full text-[15px] font-medium text-ink bg-white whitespace-nowrap max-[480px]:w-full max-[480px]:text-center">
+                Step #3
+              </span>
+            </div>
 
-          <div className="grid grid-cols-3 gap-5 mb-12 text-left max-[1024px]:grid-cols-1 max-[1024px]:max-w-[520px] max-[1024px]:mx-auto">
-            <div className="bg-sepia rounded-[20px] p-4 px-7 flex flex-col gap-4">
-              <h3 className="text-[17px] font-bold text-ink">
-                Book a Consultation
-              </h3>
-              <p className="text-[15px] leading-[1.65] text-muted">
-                A thorough dental examination designed to evaluate your oral
-                health, identify concerns, and clearly understand your goals,
-                with no commitment required.
-              </p>
+            <div className="grid grid-cols-3 gap-5 mb-12 text-left max-[1024px]:grid-cols-1 max-[1024px]:max-w-[520px] max-[1024px]:mx-auto">
+              <div className="bg-sepia rounded-[20px] p-4 px-7 flex flex-col gap-4">
+                <h3 className="text-[17px] font-bold text-ink">
+                  Book a Consultation
+                </h3>
+                <p className="text-[15px] leading-[1.65] text-muted">
+                  A thorough dental examination designed to evaluate your oral
+                  health, identify concerns, and clearly understand your goals,
+                  with no commitment required.
+                </p>
+              </div>
+              <div className="bg-brown rounded-[20px] flex flex-col gap-4">
+                <h3 className="text-[17px] font-bold text-white pt-4 px-7">
+                  Personalized Treatment
+                </h3>
+                <p className="text-[15px] leading-[1.65] text-black/75 bg-white rounded-xl mx-2 mb-2 p-6">
+                  A detailed, personalized treatment plan that explains
+                  recommended procedures, expected timelines, and transparent
+                  costs, so you know exactly what to expect.
+                </p>
+              </div>
+              <div className="bg-sepia rounded-[20px] p-4 px-7 flex flex-col gap-4">
+                <h3 className="text-[17px] font-bold text-ink">
+                  Ongoing Expert Care
+                </h3>
+                <p className="text-[15px] leading-[1.65] text-muted">
+                  Expert dental treatment performed using advanced technology,
+                  combined with attentive follow-up care and guidance to ensure
+                  long-term oral health and confidence.
+                </p>
+              </div>
             </div>
-            <div className="bg-brown rounded-[20px] flex flex-col gap-4">
-              <h3 className="text-[17px] font-bold text-white pt-4 px-7">
-                Personalized Treatment
-              </h3>
-              <p className="text-[15px] leading-[1.65] text-black/75 bg-white rounded-xl mx-2 mb-2 p-6">
-                A detailed, personalized treatment plan that explains
-                recommended procedures, expected timelines, and transparent
-                costs, so you know exactly what to expect.
-              </p>
-            </div>
-            <div className="bg-sepia rounded-[20px] p-4 px-7 flex flex-col gap-4">
-              <h3 className="text-[17px] font-bold text-ink">
-                Ongoing Expert Care
-              </h3>
-              <p className="text-[15px] leading-[1.65] text-muted">
-                Expert dental treatment performed using advanced technology,
-                combined with attentive follow-up care and guidance to ensure
-                long-term oral health and confidence.
-              </p>
-            </div>
-          </div>
 
-          <div className="flex justify-center">
-            <Link href="/#contact" className="btn-pill">
-              <span>Book Consultation</span>
-              <CalendarIcon />
-            </Link>
+            <div className="flex justify-center">
+              <Link href="/#contact" className="btn-pill">
+                <span>Book Consultation</span>
+                <CalendarIcon />
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
       )}
 
       <section
         className="bg-sepia py-[100px] max-[768px]:py-16 max-[480px]:py-12"
         id="testimonials"
       >
-        <div className="container mx-auto px-[100px] max-[1200px]:px-12 max-[600px]:px-5">
+        <div className="container mx-auto px-6 max-[1200px]:px-12 max-[600px]:px-5">
           <h2 className="font-heading text-[2.5rem] font-extrabold text-ink mb-3 max-[768px]:text-[2rem] max-[480px]:text-[1.75rem]">
             Client Satisfaction <span className="text-accent">Guaranteed</span>
           </h2>
@@ -359,65 +360,65 @@ export default function HomeSectionsFromTeam({
       </section>
 
       {isFull && (
-      <section
-        className="bg-white py-[100px] max-[768px]:py-16 max-[480px]:py-12"
-        id="media"
-      >
-        <div className="container mx-auto px-[100px] text-center max-[1200px]:px-12 max-[600px]:px-5">
-          <h2 className="font-heading text-[2.5rem] font-extrabold text-ink mb-4 max-[768px]:text-[2rem] max-[480px]:text-[1.75rem]">
-            Atlantis Clinic <span className="text-accent">News</span> And
-            Insights
-          </h2>
-          <p className="text-base text-muted max-w-[620px] mx-auto mb-14 leading-relaxed max-[768px]:mb-10">
-            Updates, announcements, and expert perspectives from Atlantis
-            Clinic, covering the latest in advanced skincare, dental care, and
-            patient-focused innovations.
-          </p>
-          <div className="grid grid-cols-4 gap-6 mb-12 text-left max-[1024px]:grid-cols-2 max-[600px]:grid-cols-1">
-            {newsArticles.map((article) => (
-              <Link
-                key={article.id}
-                href={`/media/${article.id}`}
-                className="flex flex-col gap-4 no-underline text-inherit group"
-              >
-                <div className="rounded-2xl overflow-hidden aspect-[4/5]">
-                  <img
-                    src={article.image}
-                    alt={article.title}
-                    className="w-full h-full object-cover block transition-transform duration-300 group-hover:scale-[1.04]"
-                  />
-                </div>
-                <div className="flex flex-col gap-2.5">
-                  <div className="flex items-center justify-between">
-                    <span className="px-[14px] py-[5px] border-[1.5px] border-stroke rounded-full text-[13px] text-ink">
-                      {article.categoryLabel}
-                    </span>
-                    <span className="text-[13px] text-muted">
-                      {article.date}
-                    </span>
+        <section
+          className="bg-white py-[100px] max-[768px]:py-16 max-[480px]:py-12"
+          id="media"
+        >
+          <div className="container mx-auto px-6 text-center max-[1200px]:px-12 max-[600px]:px-5">
+            <h2 className="font-heading text-[2.5rem] font-extrabold text-ink mb-4 max-[768px]:text-[2rem] max-[480px]:text-[1.75rem]">
+              Atlantis Clinic <span className="text-accent">News</span> And
+              Insights
+            </h2>
+            <p className="text-base text-muted max-w-[620px] mx-auto mb-14 leading-relaxed max-[768px]:mb-10">
+              Updates, announcements, and expert perspectives from Atlantis
+              Clinic, covering the latest in advanced skincare, dental care, and
+              patient-focused innovations.
+            </p>
+            <div className="grid grid-cols-4 gap-6 mb-12 text-left max-[1024px]:grid-cols-2 max-[600px]:grid-cols-1">
+              {newsArticles.map((article) => (
+                <Link
+                  key={article.id}
+                  href={`/media/${article.id}`}
+                  className="flex flex-col gap-4 no-underline text-inherit group"
+                >
+                  <div className="rounded-2xl overflow-hidden aspect-[4/5]">
+                    <img
+                      src={article.image}
+                      alt={article.title}
+                      className="w-full h-full object-cover block transition-transform duration-300 group-hover:scale-[1.04]"
+                    />
                   </div>
-                  <p className="text-[15px] font-semibold text-ink leading-relaxed">
-                    {article.title}
-                  </p>
-                </div>
+                  <div className="flex flex-col gap-2.5">
+                    <div className="flex items-center justify-between">
+                      <span className="px-[14px] py-[5px] border-[1.5px] border-stroke rounded-full text-[13px] text-ink">
+                        {article.categoryLabel}
+                      </span>
+                      <span className="text-[13px] text-muted">
+                        {article.date}
+                      </span>
+                    </div>
+                    <p className="text-[15px] font-semibold text-ink leading-relaxed">
+                      {article.title}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+            <div className="flex justify-center">
+              <Link href="/media" className="btn-pill">
+                <span>View All News</span>
+                <ArrowIcon />
               </Link>
-            ))}
+            </div>
           </div>
-          <div className="flex justify-center">
-            <Link href="/media" className="btn-pill">
-              <span>View All News</span>
-              <ArrowIcon />
-            </Link>
-          </div>
-        </div>
-      </section>
+        </section>
       )}
 
       <section
         className="bg-white py-[100px] max-[768px]:py-16 max-[480px]:py-12"
         id="faq"
       >
-        <div className="container mx-auto px-[100px] max-[1200px]:px-12 max-[600px]:px-5">
+        <div className="container mx-auto px-6 max-[1200px]:px-12 max-[600px]:px-5">
           <h2 className="font-heading text-[2.5rem] font-extrabold text-ink text-center mb-4 max-[768px]:text-[2rem] max-[480px]:text-[1.75rem]">
             Frequently Asked <span className="text-accent">Questions</span>
           </h2>

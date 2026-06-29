@@ -70,6 +70,10 @@
     @apply px-[18px] py-[10px] text-[15px] gap-2;
   }
 
+  .items-baseline-last {
+    align-items: last baseline;
+  }
+
   /* Scroll animation */
   .animate-on-scroll {
     opacity: 0;
