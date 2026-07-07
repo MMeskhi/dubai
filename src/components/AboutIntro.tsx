@@ -26,7 +26,7 @@ export default function AboutIntro() {
       <section className="pb-20 max-[768px]:pb-14">
         <div className="container mx-auto px-6 max-[1200px]:px-12 max-[600px]:px-5">
           <img
-            src="/images/clinic/clinic-bg.png"
+            src="/images/clinic/hero.png"
             alt="Atlantis clinic exterior"
             className="w-full rounded-[20px] object-cover aspect-[16/9] max-[600px]:aspect-[4/3]"
           />
@@ -54,7 +54,7 @@ export default function AboutIntro() {
             </div>
             <div className="max-[900px]:order-2">
               <img
-                src="/images/team/doctor-1.png"
+                src="/images/media/about-2.jpg"
                 alt="Dentist greeting a patient"
                 className="w-full rounded-[20px] object-cover aspect-[4/3]"
               />
@@ -69,7 +69,7 @@ export default function AboutIntro() {
           <div className="grid grid-cols-2 gap-12 items-center max-[900px]:grid-cols-1 max-[900px]:gap-8">
             <div className="max-[900px]:order-2">
               <img
-                src="/images/team/doctor-3.png"
+                src="/images/media/about-1.jpg"
                 alt="Dental examination at Atlantis clinic"
                 className="w-full rounded-[20px] object-cover aspect-[4/3]"
               />

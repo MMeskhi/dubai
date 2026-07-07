@@ -63,7 +63,7 @@ const faqItems: FAQItem[] = [
 
 const teamDoctors = [
   {
-    img: "/images/team/doctor-1.png",
+    img: "/images/team/doctor-4.png",
     name: "Mason Caldwell",
     role: "Dr. Emily Carter, a visionary in dental ca...",
     rating: 5.0,
@@ -77,7 +77,7 @@ const teamDoctors = [
     stars: 4,
   },
   {
-    img: "/images/team/doctor-3.png",
+    img: "/images/team/doctor-5.png",
     name: "Mason Caldwell",
     role: "Dr. Emily Carter, a visionary in dental ca...",
     rating: 5.0,
@@ -189,16 +189,26 @@ export default function HomeSectionsFromTeam({
               </div>
             ))}
 
-            <div className="bg-brown min-h-[280px] h-full flex items-center justify-center rounded-[20px] overflow-visible relative max-[1024px]:min-h-[240px]">
-              <div className="flex flex-col items-center gap-5 p-8">
-                <div className="w-[72px] h-[72px] rounded-full border border-white/40 flex items-center justify-center">
-                  <svg viewBox="0 0 60 60" width="28" height="28" fill="white">
+            <div className="bg-[url(/images/assets/subtract.png)] bg-cover bg-center min-h-[300px] h-4/5 rounded-[22px] relative overflow-hidden max-[1024px]:min-h-[250px]">
+              <div className="flex h-full min-h-[300px] flex-col items-center justify-end gap-12 px-6 py-10 pb-16 max-[1024px]:min-h-[250px]">
+                <div className="w-[116px] h-[116px] rounded-full border-2 border-white/80 flex items-center justify-center">
+                  <svg
+                    viewBox="0 0 60 60"
+                    width="48"
+                    height="48"
+                    fill="#F6BC5E"
+                  >
                     <path d="M30 4L34.5 25.5L56 30L34.5 34.5L30 56L25.5 34.5L4 30L25.5 25.5Z" />
                   </svg>
                 </div>
-                <Link href="#" className="btn-pill btn-pill--sm">
+                <Link
+                  href="#"
+                  className="inline-flex items-center gap-2.5 rounded-full bg-white px-6 py-3 text-[30] font-medium text-brown no-underline transition-all duration-300 hover:opacity-90"
+                >
                   <span>View All Employees</span>
-                  <ArrowIcon />
+                  <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-brown text-white">
+                    <ArrowIcon />
+                  </span>
                 </Link>
               </div>
             </div>
